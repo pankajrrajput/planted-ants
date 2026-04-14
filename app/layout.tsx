@@ -4,6 +4,7 @@ import "./globals.css";
 import AnnouncementBar from '../components/AnnouncementBar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import TextWithIcons from '../components/TextWithIcons';
 
 
 const geistSans = Geist({
@@ -34,7 +35,8 @@ export default function RootLayout({
       <body>
         <AnnouncementBar />
         <Header />
-            {children}
+        {children}
+        <TextWithIcons />
         <Footer />
       </body>
     </html>
