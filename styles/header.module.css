@@ -1,0 +1,173 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 2.125rem;
+}
+
+.header__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px 40px;
+}
+
+.menu-btn{
+    display: none;
+}
+
+/* LEFT NAV */
+.header__main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__link-list ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.header__link-list a,
+.header__link-list span {
+  text-decoration: none;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+}
+
+/* LOGO */
+.header__logo {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* RIGHT ICONS */
+.header__secondary-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__icon-list a {
+  margin-left: 15px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* CART */
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: white;
+  border: 1px solid #eee;
+  display: none;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+
+/* MEGA MENU CONTAINER */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100vw;   /* FULL SCREEN */
+  background: white;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 40px 80px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* SHOW ON HOVER */
+/* .menu-item:hover .mega-menu {
+  display: flex;
+} */
+
+/* LEFT SIDE */
+.mega-left {
+  display: flex;
+  gap: 40px;
+}
+
+.menu-column h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.menu-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-column li {
+  margin-bottom: 6px;
+}
+
+.menu-column a {
+  text-decoration: none;
+  color: #555;
+}
+
+/* RIGHT SIDE IMAGES */
+.mega-right {
+  display: flex;
+  gap: 15px;
+}
+
+.mega-right a {
+  text-decoration: none;
+  color: black;
+}
+
+.mega-right img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.mega-right p {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
