@@ -1,3 +1,5 @@
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function HeroBanner() {
   return (
     <section className="relative w-full overflow-hidden">
@@ -22,7 +24,7 @@ export default function HeroBanner() {
           </p>
 
           <a
-            href="/pages/planted-ants-story"
+            href={buildShopifyUrl("/pages/planted-ants-story")}
             className="inline-block px-6 py-3 rounded-md bg-green-600 hover:bg-green-700 transition"
           >
             Our Story

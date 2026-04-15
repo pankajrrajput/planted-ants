@@ -1,4 +1,7 @@
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function Banner() {
+  const buttonHref = buildShopifyUrl("/collections/ants-for-sale");
   return (
     <div
       className="slideshow"
@@ -47,10 +50,10 @@ export default function Banner() {
                 </p>
 
                 <a
-                  href="/collections/ants-for-sale"
+                  href={buttonHref}
                   className="button button--xl bg-white text-black px-6 py-3 inline-block mt-4"
                 >
-                  QUEEN ANTS FOR SALE
+                  QUEEN ANTS FOR SALE test
                 </a>
               </div>
             </div>

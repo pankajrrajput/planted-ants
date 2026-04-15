@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function FaqSection() {
   const faqs = [
@@ -68,7 +69,7 @@ export default function FaqSection() {
           </div>
 
           <a
-            href="/pages/contact"
+            href={buildShopifyUrl("/pages/contact")}
             className="inline-block px-6 py-3 bg-black text-white rounded-md"
           >
             Contact Live Support

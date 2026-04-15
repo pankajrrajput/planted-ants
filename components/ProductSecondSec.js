@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function ProductSecondSec() {
+  const router = useRouter();
+
   const productImages = [
     { thumb: "/images/mini-ruby-1.jpeg", large: "/images/mini-ruby-large-1.jpeg" },
     { thumb: "/images/mini-ruby-2.png", large: "/images/mini-ruby-large-2.png" },
@@ -11,15 +15,34 @@ export default function ProductSecondSec() {
   ];
 
   const variants = [
-    { label: "Queen + Eggs", price: 51.99, disabled: false },
-    { label: "Queen + 1-5 Workers", price: 68.99, disabled: false },
-    { label: "Queen + 5-10 Workers", price: 108.99, disabled: true },
+    {
+      label: "Queen + Eggs",
+      price: 51.99,
+      variantId: "45970358665497",
+      disabled: false,
+    },
+    {
+      label: "Queen + 1-5 Workers",
+      price: 68.99,
+      variantId: "45970358698265",
+      disabled: false,
+    },
+    {
+      label: "Queen + 5-10 Workers",
+      price: 108.99,
+      variantId: "45970358731033",
+      disabled: true,
+    },
   ];
 
   const [activeImage, setActiveImage] = useState(productImages[0].large);
-
-  // Default first variant on refresh
   const [selectedVariant, setSelectedVariant] = useState(variants[0]);
+
+  const handleAddToCart = () => {
+    window.location.href = buildShopifyUrl(
+      `/cart/${selectedVariant.variantId}:1`
+    );
+  };
 
   return (
     <div className="section section--tight section-blends section-full">
@@ -48,11 +71,14 @@ export default function ProductSecondSec() {
                 onClick={() => setActiveImage(img.large)}
                 style={{ cursor: "pointer" }}
               >
-                <img src={img.thumb} alt={`mini-ruby-${i}`} className="rounded" />
+                <img
+                  src={img.thumb}
+                  alt={`mini-ruby-${i}`}
+                  className="rounded"
+                />
               </div>
             ))}
           </div>
-
         </div>
 
         {/* RIGHT SIDE */}
@@ -61,7 +87,7 @@ export default function ProductSecondSec() {
             Mini Ruby Ants (C. discolor)
           </h1>
 
-           {/* Dynamic Price */}
+          {/* Dynamic Price */}
           <div className="product-info__price">
             <span className="text-lg">
               ${selectedVariant.price.toFixed(2)}
@@ -71,11 +97,6 @@ export default function ProductSecondSec() {
           {/* OFFER */}
           <div className="offer bg-custom text-custom">
             <div className="text-with-icon">
-                <span style={{ width: 20, height: 20 }}><svg role="presentation" fill="none" focusable="false" stroke-width="2" width="24" height="24" class="icon icon-picto-percent" viewBox="0 0 24 24">
-                    <path d="M12 22.714c6.857 0 10.714-3.857 10.714-10.714S18.857 1.286 12 1.286 1.286 5.143 1.286 12 5.143 22.714 12 22.714Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="m7.714 16.286 8.571-8.572" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M8.571 9.429a.857.857 0 1 0 0-1.715.857.857 0 0 0 0 1.715v0ZM15.428 16.286a.857.857 0 1 0 0-1.715.857.857 0 0 0 0 1.715Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg></span>
               <span className="bold text-sm">
                 Discount
               </span>
@@ -86,49 +107,51 @@ export default function ProductSecondSec() {
             </div>
           </div>
 
-           {/* VARIANTS */}
-            <div className="product-info__variant-picker">
+          {/* VARIANT DROPDOWN */}
+          <div className="product-info__variant-picker">
             <fieldset className="variant-picker__option">
-                <legend className="text-subdued">
+              <legend className="text-subdued">
                 Size: {selectedVariant.label}
-                </legend>
+              </legend>
 
-                <div className="variant-picker__option-values wrap gap-2">
+              <div className="variant-picker__option-values wrap gap-2">
                 <select
-                    className="block-swatch"
-                    value={selectedVariant.label}
-                    onChange={(e) => {
+                  value={selectedVariant.variantId}
+                  onChange={(e) => {
                     const selected = variants.find(
-                        (variant) => variant.label === e.target.value
+                      (variant) =>
+                        variant.variantId === e.target.value
                     );
+
                     if (selected) {
-                        setSelectedVariant(selected);
+                      setSelectedVariant(selected);
                     }
-                    }}
-                    style={{
+                  }}
+                  style={{
                     padding: "10px 14px",
                     width: "100%",
                     cursor: "pointer",
-                    }}
+                  }}
                 >
-                    {variants.map((variant, index) => (
+                  {variants.map((variant, index) => (
                     <option
-                        key={index}
-                        value={variant.label}
-                        disabled={variant.disabled}
+                      key={index}
+                      value={variant.variantId}
+                      disabled={variant.disabled}
                     >
-                        {variant.label}
+                      {variant.label}
                     </option>
-                    ))}
+                  ))}
                 </select>
-                </div>
+              </div>
             </fieldset>
-            </div>
+          </div>
 
           {/* BUTTON */}
           <div className="product-info__buy-buttons">
             <button
               type="button"
+              onClick={handleAddToCart}
               className="button button--xl"
               style={{
                 background: "rgb(240,196,23)",
@@ -140,7 +163,6 @@ export default function ProductSecondSec() {
           </div>
 
         </div>
-
       </div>
     </div>
   );

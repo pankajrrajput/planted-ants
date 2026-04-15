@@ -1,3 +1,5 @@
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function StartAdventureSection() {
   const products = [
     {
@@ -39,7 +41,7 @@ export default function StartAdventureSection() {
         </div>
 
         <a
-          href="/collections/ants-for-sale"
+          href={buildShopifyUrl("/collections/ants-for-sale")}
           className="text-blue-600 font-medium flex items-center gap-2"
         >
           View all →
@@ -52,7 +54,7 @@ export default function StartAdventureSection() {
           {products.map((p, idx) => (
             <a
               key={idx}
-              href={p.href}
+              href={buildShopifyUrl(p.href)}
               className="w-[280px] bg-white rounded-lg shadow-md overflow-hidden flex-shrink-0"
             >
               {/* Images */}

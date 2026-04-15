@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function CareGuidesCarousel() {
   const slides = [
@@ -60,7 +61,7 @@ export default function CareGuidesCarousel() {
             <p className="text-gray-600 mb-6">{slide.text}</p>
 
             <a
-              href={slide.buttonLink}
+              href={buildShopifyUrl(slide.buttonLink)}
               className="inline-block px-6 py-3 bg-black text-white rounded-md"
             >
               {slide.buttonText}

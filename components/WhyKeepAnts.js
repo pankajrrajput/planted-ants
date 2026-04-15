@@ -1,3 +1,5 @@
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function WhyKeepAnts() {
   return (
     <section className="section section-full py-16">
@@ -33,7 +35,7 @@ export default function WhyKeepAnts() {
           </p>
 
           <a
-            href="/collections/ants-for-sale"
+            href={buildShopifyUrl("/collections/ants-for-sale")}
             className="inline-block px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition"
           >
             Ants For Sale

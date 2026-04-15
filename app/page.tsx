@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Banner from '../components/Banner';
 import RichTextSection from '../components/RichTextSection';
 import ImagesWithTextSection from '../components/ImagesWithTextSection';

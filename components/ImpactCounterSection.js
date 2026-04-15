@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function ImpactCounterSection() {
   const ref = useRef(null);
@@ -78,7 +79,7 @@ export default function ImpactCounterSection() {
 
             <a
               className="button button--xl"
-              href="/pages/100-live-ant-guarantee"
+              href={buildShopifyUrl("/pages/100-live-ant-guarantee")}
             >
               Learn about our guarantees
             </a>

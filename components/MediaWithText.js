@@ -1,5 +1,7 @@
 "use client";
 
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function MediaWithText() {
   return (
     <div className="section">
@@ -29,7 +31,7 @@ export default function MediaWithText() {
             insect that was all but unheard-of in California at the time.
           </p>
 
-          <a href="/collections/ants-for-sale" className="btn">
+          <a href={buildShopifyUrl("/collections/ants-for-sale")} className="btn">
             View our Ant-Keeping Bundles
           </a>
         </div>

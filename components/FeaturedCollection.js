@@ -1,8 +1,34 @@
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function FeaturedCollection() {
+  const products = [
+    {
+      title: "Mini Ruby Ants (C. discolor)",
+      price: "From $51.99",
+      link: "/products/mini-ruby-ants-c-discolor",
+      image1: "/images/1.jpeg",
+      image2: "/images/1.1.png",
+    },
+    {
+      title: "Golden Tail Ants",
+      price: "From $92.99",
+      link: "/products/goldentail-ants-for-sale",
+      image1: "/images/2.jpg",
+      image2: "/images/2.2.jpg",
+    },
+    {
+      title: "Sunrise Amber Ants",
+      price: "From $82.99",
+      link: "/products/sunrise-amber-ants-c-castaneus",
+      image1: "/images/3.jpg",
+      image2: "/images/3.3.jpg",
+    },
+  ];
+
   return (
     <div className="section section-blends section-full">
       <div className="section-stack">
-
+        
         {/* HEADER */}
         <div className="flex items-end justify-between mb-6">
           <div className="prose">
@@ -10,80 +36,52 @@ export default function FeaturedCollection() {
             <p>Check out all the queen ants we have available!</p>
           </div>
 
-          <a href="/collections/ants-for-sale" className="flex items-center gap-2 group">
+          <a
+            href={buildShopifyUrl("/collections/ants-for-sale")}
+            className="flex items-center gap-2 group"
+          >
             <span className="group-hover:underline">View all</span>
             <span>›</span>
           </a>
         </div>
 
-        {/* SCROLL CONTAINER */}
+        {/* PRODUCTS */}
         <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4">
+          {products.map((product, index) => (
+            <div key={index} className="min-w-[260px] bg-white">
+            
+                <a
+                  href={buildShopifyUrl(product.link)}
+                  className="block group"
+                >
+                  <div className="relative w-full h-[260px] overflow-hidden">
+                    
+                    {/* Main Image */}
+                    <img
+                      src={product.image1}
+                      alt={product.title}
+                      className="w-full h-full object-cover transition duration-500 group-hover:opacity-0"
+                    />
 
-          {/* PRODUCT 1 */}
-          <div className="min-w-[260px] bg-white">
-            <a href="/products/mini-ruby-ants-c-discolor">
-              <img
-                src="//theantzone.com/cdn/shop/files/FullSizeRender2.heic?v=1690393638"
-                alt="Mini Ruby Ants"
-                className="w-full aspect-square object-cover"
-              />
-              <img
-                src="//theantzone.com/cdn/shop/files/FullSizeRender3.png?v=1690340337"
-                alt=""
-                className="w-full aspect-square object-cover mt-2"
-              />
-            </a>
+                    {/* Hover Image */}
+                    <img
+                      src={product.image2}
+                      alt={product.title}
+                      className="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition duration-500 group-hover:opacity-100"
+                    />
+                  </div>
 
-            <div className="mt-3">
-              <p className="font-bold">Mini Ruby Ants (C. discolor)</p>
-              <p className="text-gray-600">From $51.99</p>
+                  <div className="mt-3">
+                    <p className="font-bold">{product.title}</p>
+                    <p className="text-gray-600">{product.price}</p>
+                  </div>
+                </a>
+
             </div>
-          </div>
-
-          {/* PRODUCT 2 */}
-          <div className="min-w-[260px] bg-white">
-            <a href="/products/goldentail-ants-for-sale">
-              <img
-                src="//theantzone.com/cdn/shop/files/IMG_0962.jpg?v=1690414311"
-                alt="Golden Tail Ants"
-                className="w-full aspect-square object-cover"
-              />
-              <img
-                src="//theantzone.com/cdn/shop/files/IMG_0952.jpg?v=1690414348"
-                alt=""
-                className="w-full aspect-square object-cover mt-2"
-              />
-            </a>
-
-            <div className="mt-3">
-              <p className="font-bold">Golden Tail Ants</p>
-              <p className="text-gray-600">From $92.99</p>
-            </div>
-          </div>
-
-          {/* PRODUCT 3 */}
-          <div className="min-w-[260px] bg-white">
-            <a href="/products/sunrise-amber-ants-c-castaneus">
-              <img
-                src="//theantzone.com/cdn/shop/files/IMG_0969.jpg?v=1690393583"
-                alt="Sunrise Amber Ants"
-                className="w-full aspect-square object-cover"
-              />
-              <img
-                src="//theantzone.com/cdn/shop/files/IMG_0966.jpg?v=1690393562"
-                alt=""
-                className="w-full aspect-square object-cover mt-2"
-              />
-            </a>
-
-            <div className="mt-3">
-              <p className="font-bold">Sunrise Amber Ants</p>
-              <p className="text-gray-600">From $82.99</p>
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </div>
   );
 }
+

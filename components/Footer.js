@@ -1,4 +1,5 @@
 import styles from '../styles/footer.module.css'
+import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function Footer() {
   return (
@@ -88,10 +89,10 @@ export default function Footer() {
             <div className="footer__block footer__block--menu">
               <p className="bold">Customer Info</p>
               <ul className="v-stack gap-3" role="list">
-                <li><a href="/pages/shipping-information" className="inline-block link-faded break-all">Return Policy</a></li>
-                <li><a href="/pages/privacy-policy" className="inline-block link-faded break-all">Privacy Policy</a></li>
-                <li><a href="/pages/terms-and-conditions" className="inline-block link-faded break-all">Terms of Service</a></li>
-                <li><a href="/pages/disclaimer-permit-conditions" className="inline-block link-faded break-all">Disclaimer and Permit Conditions</a></li>
+                <li><a href={buildShopifyUrl("/pages/shipping-information")} className="inline-block link-faded break-all">Return Policy</a></li>
+                <li><a href={buildShopifyUrl("/pages/privacy-policy")} className="inline-block link-faded break-all">Privacy Policy</a></li>
+                <li><a href={buildShopifyUrl("/pages/terms-and-conditions")} className="inline-block link-faded break-all">Terms of Service</a></li>
+                <li><a href={buildShopifyUrl("/pages/disclaimer-permit-conditions")} className="inline-block link-faded break-all">Disclaimer and Permit Conditions</a></li>
               </ul>
             </div>
 

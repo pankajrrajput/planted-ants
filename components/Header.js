@@ -11,12 +11,14 @@ export default function Header() {
 
         {/* LOGO */}
         <div className="flex justify-center">
-          <img
-            src="/images/logo.webp"
-            alt="Logo"
-            width={255}
-            height={107}
-          />
+          <a href="/">
+            <img
+              src="/images/logo.webp"
+              alt="Logo"
+              width={255}
+              height={107}
+            />
+          </a>
         </div>
 
         {/* NAV */}

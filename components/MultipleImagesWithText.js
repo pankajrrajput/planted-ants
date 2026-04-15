@@ -1,3 +1,5 @@
+import { buildShopifyUrl } from "../lib/shopifyUrl";
+
 export default function MultipleImagesWithText() {
   return (
     <div className="section section-blends section-full">
@@ -38,7 +40,7 @@ export default function MultipleImagesWithText() {
               </p>
 
               <a
-                href="/collections/ants-for-sale"
+                href={buildShopifyUrl("/collections/ants-for-sale")}
                 className="button button--xl"
               >
                 Beginner Ant Queens
