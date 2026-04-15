@@ -5,6 +5,8 @@ import AnnouncementBar from '../components/AnnouncementBar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TextWithIcons from '../components/TextWithIcons';
+import LayoutWrapper from '../components/LayoutWrapper';
+import { CartProvider } from '../contexts/CartContext';
 
 
 const geistSans = Geist({
@@ -33,11 +35,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-        <AnnouncementBar />
-        <Header />
-        {children}
-        <TextWithIcons />
-        <Footer />
+        <CartProvider>
+          <AnnouncementBar />
+          <Header />
+          <LayoutWrapper>
+            {children}
+            <TextWithIcons />
+            <Footer />
+          </LayoutWrapper>
+        </CartProvider>
       </body>
     </html>
   );

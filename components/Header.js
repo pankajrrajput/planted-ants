@@ -1,12 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCart } from "../contexts/CartContext";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { cartItems, isCartOpen, updateQuantity, removeItem, getTotalItems, closeCart, openCart } = useCart();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const addToCart = (product) => {
+    const existingItem = cartItems.find(item => item.id === product.id);
+    if (existingItem) {
+      updateQuantity(product.id, existingItem.quantity + 1);
+    } else {
+      updateQuantity(product.id, 1);
+    }
+  };
 
   return (
-    <header className="sticky top-0 z-[1000] bg-white border-b">
+    <header className={`sticky top-0 z-[1001] bg-white border-b ${
+        isScrolled ? 'active' : ''
+      }`}>
       <div className="grid grid-cols-[1fr_auto_1fr] items-center px-10 py-4">
 
         {/* LOGO */}
@@ -239,7 +262,10 @@ export default function Header() {
 
         {/* CART */}
         <div className="flex justify-end">
-          <a href="#" className="relative text-xl">
+          <button
+            onClick={openCart}
+            className="relative text-xl hover:opacity-80 transition-colors"
+          >
             <svg
               role="presentation"
               strokeWidth="2"
@@ -247,22 +273,27 @@ export default function Header() {
               width="22"
               height="22"
               className="icon icon-cart"
-              viewBox="0 0 22 22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
             >
               <path
-                d="M11 7H3.577A2 2 0 0 0 1.64 9.497l2.051 8A2 2 0 0 0 5.63 19H16.37a2 2 0 0 0 1.937-1.503l2.052-8A2 2 0 0 0 18.422..."
+                d="M9 2L6 9H3L6.5 19H17.5L21 9H18L15 2H9Z"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                fill="none"
               />
+              <path d="M6 9H18" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            {/* <span className="absolute -top-2 -right-3 bg-black text-white text-xs px-1 rounded-full">
-              0
-            </span> */}
-          </a>
+            {getTotalItems() > 0 && (
+              <span className="absolute -top-2 -right-3 bg-black text-white text-xs px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+                {getTotalItems()}
+              </span>
+            )}
+          </button>
         </div>
 
       </div>
+
     </header>
   );
 }

@@ -2,67 +2,106 @@
 
 import { useState } from "react";
 
-export default function HotspotImage() {
-  const [active, setActive] = useState(null);
+export default function HotspotImageSection() {
+  const [activePopup, setActivePopup] = useState(null);
 
   const hotspots = [
     {
-      id: 0,
-      title: "Ant Farm Bundles",
-      desc: "Shop the best ant farms on the market & everything else you need to get started",
-      position: { top: "35%", left: "25%" },
-    },
-    {
       id: 1,
-      title: "California Reptile Conventions!",
-      desc: "Meet us vending in person!",
-      position: { top: "50%", left: "70%" },
+      top: "28%",
+      left: "22%",
+      title: "Ant Farm Bundles",
+      text: "Shop the best ant farms on the market & everything else you need to get started",
     },
     {
       id: 2,
+      top: "45%",
+      left: "70%",
+      title: "California Reptile Conventions!",
+      text: "Meet us vending in person!",
+    },
+    {
+      id: 3,
+      top: "72%",
+      left: "55%",
       title: "Care Guides",
-      desc: "We offer care guides for beginners!",
-      position: { top: "65%", left: "75%" },
+      text: "We offer care guides for beginners!",
     },
   ];
 
-  const toggle = (id) => {
-    setActive(active === id ? null : id);
+  const togglePopup = (id) => {
+    setActivePopup(activePopup === id ? null : id);
   };
 
   return (
-    <section className="section section-full">
-      <div className="relative w-full">
-
-        {/* Image */}
+    <section className="section section-blends section-full">
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          maxWidth: "1400px",
+          margin: "0 auto",
+        }}
+      >
         <img
           src="/images/hubspot-img.webp"
-          alt="Ant world"
-          className="w-full h-auto"
+          alt="Ant Hotspot"
+          style={{
+            width: "100%",
+            display: "block",
+            borderRadius: "12px",
+          }}
         />
 
-        {/* Hotspots */}
         {hotspots.map((spot) => (
           <div
             key={spot.id}
-            className="absolute"
             style={{
-              top: spot.position.top,
-              left: spot.position.left,
+              position: "absolute",
+              top: spot.top,
+              left: spot.left,
+              transform: "translate(-50%, -50%)",
             }}
           >
-            {/* Dot */}
+            {/* PLUS BUTTON */}
             <button
-              onClick={() => toggle(spot.id)}
-              className="w-4 h-4 rounded-full bg-white border shadow"
-            />
+              onClick={() => togglePopup(spot.id)}
+              style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "50%",
+                border: "none",
+                background: "#fff",
+                cursor: "pointer",
+                fontSize: "24px",
+                fontWeight: "bold",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              }}
+            >
+              +
+            </button>
 
-            {/* Popover */}
-            {active === spot.id && (
-              <div className="absolute z-10 mt-2 w-48 bg-white p-3 shadow-lg rounded">
-                <div className="font-bold text-sm">{spot.title}</div>
-                <p className="text-xs text-gray-600 mt-1">
-                  {spot.desc}
+            {/* POPUP */}
+            {activePopup === spot.id && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "55px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: "260px",
+                  background: "#fff",
+                  padding: "16px",
+                  borderRadius: "10px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                  zIndex: 20,
+                }}
+              >
+                <h4 style={{ marginBottom: "8px" }}>
+                  {spot.title}
+                </h4>
+                <p style={{ fontSize: "14px" }}>
+                  {spot.text}
                 </p>
               </div>
             )}

@@ -1,6 +1,10 @@
+"use client";
+
 import { buildShopifyUrl } from "../lib/shopifyUrl";
+import { useCart } from "../contexts/CartContext";
 
 export default function AntSuppliesCarousel() {
+  const { addToCart } = useCart();
   const buttonHref = buildShopifyUrl("/collections/ants-for-sale");
   return (
     <section className="section section-blends section-full">
@@ -16,18 +20,24 @@ export default function AntSuppliesCarousel() {
         <div className="carousel">
 
           <ProductCard
+            id={4}
             title="Appleburst Ant Nectar"
-            price="$25.99"
+            price={25.99}
+            displayPrice="$25.99"
             image="/images/slider-1.webp"
             image2="/images/slide-1-1.webp"
             link={buildShopifyUrl("products/bloodburst-ant-nectar")}
+            addToCart={addToCart}
           />
 
           <ProductCard
+            id={5}
             title="Fluon"
-            price="$29.95"
+            price={29.95}
+            displayPrice="$29.95"
             image="/images/slider-2.webp"
             link={buildShopifyUrl("products/floun")}
+            addToCart={addToCart}
           />
 
         </div>
@@ -38,7 +48,7 @@ export default function AntSuppliesCarousel() {
 
 /* ✅ IMPORTANT: define it BELOW (or ABOVE) the component */
 
-function ProductCard({ title, price, image, image2, link }) {
+function ProductCard({ id, title, price, displayPrice, image, image2, link, addToCart }) {
   return (
     <div className="product-card">
       <a href={link} className="block group">
@@ -66,10 +76,20 @@ function ProductCard({ title, price, image, image2, link }) {
 
       <div className="product-card__info">
         <div>{title}</div>
-        <div>{price}</div>
+        <div>{displayPrice}</div>
       </div>
 
-      <button>+ Quick add</button>
+      <button
+        onClick={() => addToCart({
+          id: id,
+          name: title,
+          price: price,
+          image: image
+        })}
+        className="w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors text-sm"
+      >
+        + Quick add
+      </button>
     </div>
   );
 }

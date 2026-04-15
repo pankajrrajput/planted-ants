@@ -1,4 +1,31 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function ImpactStatsSection() {
+  const [percentage, setPercentage] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = 100;
+    const duration = 2000; // 2 seconds
+    const interval = 20;
+    const step = end / (duration / interval);
+
+    const timer = setInterval(() => {
+      start += step;
+
+      if (start >= end) {
+        setPercentage(end);
+        clearInterval(timer);
+      } else {
+        setPercentage(Math.floor(start));
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div
       className="section section-full bg-custom"
@@ -6,25 +33,17 @@ export default function ImpactStatsSection() {
     >
       <div>
         <div className="impact-text impact-text--center">
-          
+
+          {/* First Section */}
           <div className="snap-center">
             <h2 className="impact-text__text heading break-all">
-              <impact-text
-                count-up="4"
-                reveal-js=""
+              <span
                 style={{
-                  opacity: 1,
-                  transform: "translateY(0px)",
+                  display: "inline-block",
                 }}
               >
-                <span
-                  style={{
-                    display: "inline-block",
-                  }}
-                >
-                  10
-                </span>
-              </impact-text>
+                10
+              </span>
             </h2>
 
             <div className="impact-text__content">
@@ -34,26 +53,18 @@ export default function ImpactStatsSection() {
             </div>
           </div>
 
+          {/* Second Section with Counter */}
           <div className="snap-center">
             <h2 className="impact-text__text heading break-all">
-              <impact-text
-                count-up="5"
-                reveal-js=""
+              <span
                 style={{
-                  opacity: 1,
-                  transform: "translateY(0px)",
+                  textAlign: "end",
+                  display: "inline-block",
                 }}
               >
-                <span
-                  style={{
-                    textAlign: "end",
-                    display: "inline-block",
-                  }}
-                >
-                  100
-                </span>
-                %
-              </impact-text>
+                {percentage}
+              </span>
+              %
             </h2>
 
             <div className="impact-text__content">
@@ -63,24 +74,16 @@ export default function ImpactStatsSection() {
             </div>
           </div>
 
+          {/* Third Section */}
           <div className="snap-center">
             <h2 className="impact-text__text heading break-all">
-              <impact-text
-                count-up="2.1"
-                reveal-js=""
+              <span
                 style={{
-                  opacity: 1,
-                  transform: "translateY(0px)",
+                  display: "inline-block",
                 }}
               >
-                <span
-                  style={{
-                    display: "inline-block",
-                  }}
-                >
-                  5
-                </span>
-              </impact-text>
+                5
+              </span>
             </h2>
 
             <div className="impact-text__content">

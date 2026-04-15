@@ -1,24 +1,34 @@
+"use client";
+
 import { buildShopifyUrl } from "../lib/shopifyUrl";
+import { useCart } from "../contexts/CartContext";
 
 export default function FeaturedCollection() {
+  const { addToCart } = useCart();
   const products = [
     {
+      id: 1,
       title: "Mini Ruby Ants (C. discolor)",
-      price: "From $51.99",
+      price: 51.99,
+      displayPrice: "From $51.99",
       link: "/products/mini-ruby-ants-c-discolor",
       image1: "/images/1.jpeg",
       image2: "/images/1.1.png",
     },
     {
+      id: 2,
       title: "Golden Tail Ants",
-      price: "From $92.99",
+      price: 92.99,
+      displayPrice: "From $92.99",
       link: "/products/goldentail-ants-for-sale",
       image1: "/images/2.jpg",
       image2: "/images/2.2.jpg",
     },
     {
+      id: 3,
       title: "Sunrise Amber Ants",
-      price: "From $82.99",
+      price: 82.99,
+      displayPrice: "From $82.99",
       link: "/products/sunrise-amber-ants-c-castaneus",
       image1: "/images/3.jpg",
       image2: "/images/3.3.jpg",
@@ -73,7 +83,22 @@ export default function FeaturedCollection() {
 
                   <div className="mt-3">
                     <p className="font-bold">{product.title}</p>
-                    <p className="text-gray-600">{product.price}</p>
+                    <p className="text-gray-600">{product.displayPrice}</p>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        addToCart({
+                          id: product.id,
+                          name: product.title,
+                          price: product.price,
+                          image: product.image1
+                        });
+                      }}
+                      className="mt-2 w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors text-sm"
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </a>
 

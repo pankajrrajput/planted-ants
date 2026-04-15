@@ -1,165 +1,123 @@
+"use client";
+
+import { useState } from "react";
+
 export default function AntSpotlightSection() {
+  const [activePopup, setActivePopup] = useState(null);
+
+  const togglePopup = (id) => {
+    setActivePopup(activePopup === id ? null : id);
+  };
+
+  const hotspots = [
+    {
+      id: 1,
+      top: "25%",
+      left: "22%",
+      title: "Digging Masters",
+      text: "Mini Ruby ants typically create subterranean nests, constructing intricate tunnel systems beneath the soil's surface to house their colonies.",
+    },
+    {
+      id: 2,
+      top: "48%",
+      left: "65%",
+      title: "Named after their upper body.",
+      text: "Mini Ruby ants derive their name from their striking ruby-colored head.",
+    },
+    {
+      id: 3,
+      top: "72%",
+      left: "38%",
+      title: "Defense is better than offense.",
+      text: "Golden-tailed ants exhibit polymorphism, meaning they have different-sized castes within the same colony.",
+    },
+  ];
+
   return (
     <div className="section section-blends section-full">
       <div className="section-stack">
         <div
-          className="content-over-media full-bleed text-custom"
-          style={{ "--text-color": "255 255 255" }}
+          style={{
+            position: "relative",
+            width: "100%",
+          }}
         >
           <img
             src="/images/spotlight-sec.png"
-            alt=""
-            srcSet="/images/spotlight-sec.png 1062w, /images/spotlight-sec-400.png 400w, /images/spotlight-sec-800.png 800w"
-            width="1062"
-            height="328"
-            loading="lazy"
-            className="hidden md:block"
-            sizes="100vw"
+            alt="Spotlight"
+            style={{
+              width: "100%",
+              display: "block",
+              borderRadius: "10px",
+            }}
           />
 
-          <img
-            src="/images/spotlight-sec.png"
-            alt=""
-            srcSet="/images/spotlight-sec.png 1062w, /images/spotlight-sec-400.png 400w, /images/spotlight-sec-800.png 800w"
-            width="1062"
-            height="328"
-            loading="lazy"
-            className="md:hidden"
-            sizes="100vw"
-          />
-
-          {/* Hot Spot 1 */}
-          <div
-            id="block-template-item-1"
-            className="hot-spot"
-          >
-            <button
-              type="button"
-              aria-controls="popover-item-1"
-              aria-expanded="false"
-              className="hot-spot__dot tap-area"
-              aria-haspopup="dialog"
+          {hotspots.map((spot) => (
+            <div
+              key={spot.id}
+              style={{
+                position: "absolute",
+                top: spot.top,
+                left: spot.left,
+                transform: "translate(-50%, -50%)",
+                zIndex: 20,
+              }}
             >
-              <span className="sr-only">Read more</span>
-              <svg
-                role="presentation"
-                focusable="false"
-                strokeWidth="2"
-                width="8"
-                height="8"
-                className="icon icon-plus"
-                viewBox="0 0 12 12"
+              {/* PLUS BUTTON */}
+              <button
+                onClick={() => togglePopup(spot.id)}
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  border: "none",
+                  background: "#fff",
+                  cursor: "pointer",
+                  fontSize: "22px",
+                  fontWeight: "bold",
+                  boxShadow: "0 6px 16px rgba(0,0,0,0.15)",
+                }}
               >
-                <path d="M6 0V12" fill="none" stroke="currentColor" />
-                <path d="M0 6L12 6" fill="none" stroke="currentColor" />
-              </svg>
-            </button>
+                +
+              </button>
 
-            <x-popover
-              id="popover-item-1"
-              className="hot-spot-popover popover"
-              anchor-vertical="center"
-              anchor-horizontal="start"
-              role="dialog"
-            >
-              <div className="prose">
-                <p className="h6">Digging Masters</p>
-                <p>
-                  Mini Ruby ants typically create subterranean nests,
-                  constructing intricate tunnel systems beneath the soil's
-                  surface to house their colonies.
-                </p>
-              </div>
-            </x-popover>
-          </div>
+              {/* POPUP */}
+              {activePopup === spot.id && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "50px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "280px",
+                    background: "#fff",
+                    padding: "16px",
+                    borderRadius: "10px",
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                    zIndex: 50,
+                  }}
+                >
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {spot.title}
+                  </p>
 
-          {/* Hot Spot 2 */}
-          <div
-            id="block-template-item-2"
-            className="hot-spot"
-          >
-            <button
-              type="button"
-              aria-controls="popover-item-2"
-              aria-expanded="false"
-              className="hot-spot__dot tap-area"
-              aria-haspopup="dialog"
-            >
-              <span className="sr-only">Read more</span>
-              <svg
-                role="presentation"
-                focusable="false"
-                strokeWidth="2"
-                width="8"
-                height="8"
-                className="icon icon-plus"
-                viewBox="0 0 12 12"
-              >
-                <path d="M6 0V12" fill="none" stroke="currentColor" />
-                <path d="M0 6L12 6" fill="none" stroke="currentColor" />
-              </svg>
-            </button>
-
-            <x-popover
-              id="popover-item-2"
-              className="hot-spot-popover popover"
-              anchor-vertical="center"
-              anchor-horizontal="end"
-              role="dialog"
-            >
-              <div className="prose">
-                <p className="h6">Named after their upper body.</p>
-                <p>
-                  Mini Ruby ants derive their name from their striking
-                  ruby-colored head.
-                </p>
-              </div>
-            </x-popover>
-          </div>
-
-          {/* Hot Spot 3 */}
-          <div
-            id="block-template-item-3"
-            className="hot-spot"
-          >
-            <button
-              type="button"
-              aria-controls="popover-item-3"
-              aria-expanded="false"
-              className="hot-spot__dot tap-area"
-              aria-haspopup="dialog"
-            >
-              <span className="sr-only">Read more</span>
-              <svg
-                role="presentation"
-                focusable="false"
-                strokeWidth="2"
-                width="8"
-                height="8"
-                className="icon icon-plus"
-                viewBox="0 0 12 12"
-              >
-                <path d="M6 0V12" fill="none" stroke="currentColor" />
-                <path d="M0 6L12 6" fill="none" stroke="currentColor" />
-              </svg>
-            </button>
-
-            <x-popover
-              id="popover-item-3"
-              className="hot-spot-popover popover"
-              anchor-vertical="center"
-              anchor-horizontal="start"
-              role="dialog"
-            >
-              <div className="prose">
-                <p className="h6">Defense is better than offense.</p>
-                <p>
-                  Golden-tailed ants exhibit polymorphism, meaning they have
-                  different-sized castes within the same colony.
-                </p>
-              </div>
-            </x-popover>
-          </div>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    {spot.text}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
