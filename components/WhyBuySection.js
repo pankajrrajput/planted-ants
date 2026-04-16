@@ -18,8 +18,8 @@ export default function WhyBuySection() {
   ];
 
   return (
-    <div className="section section-blends section-full">
-      <div className="section-stack">
+    <div className="section section-blends section-full palanted-section">
+      <div className="section-stack planted-inner">
         {/* HEADER */}
         <section-header className="section-header justify-start justify-items-start text-start">
           <div className="prose">

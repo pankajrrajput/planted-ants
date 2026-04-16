@@ -10,7 +10,7 @@ export default function ScrollingText2() {
         {[...Array(8)].map((_, i) => (
           <span
             key={i}
-            className="mx-8 text-3xl md:text-5xl font-bold bg-gradient-to-b from-yellow-300 to-red-500 bg-clip-text text-transparent"
+            className="mx-8 text-3xl md:text-8xl font-bold bg-gradient-to-b from-yellow-300 to-red-500 bg-clip-text text-transparent"
           >
             Mini Ruby Ants
           </span>

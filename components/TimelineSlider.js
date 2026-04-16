@@ -73,7 +73,7 @@ export default function TimelineSlider() {
 
   return (
     <div
-      className="section section-boxed bg-custom"
+      className="section section-boxed bg-custom section-timeline"
       style={{ "--background": "240 240 240" }}
     >
       <div className="timeline">
@@ -143,7 +143,7 @@ export default function TimelineSlider() {
               onClick={prevSlide}
               className="circle-button ring group"
             >
-              Previous
+              ‹
             </button>
 
             <button
@@ -151,7 +151,7 @@ export default function TimelineSlider() {
               onClick={nextSlide}
               className="circle-button ring group"
             >
-              Next
+              ›
             </button>
           </div>
         </div>
