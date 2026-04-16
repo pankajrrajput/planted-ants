@@ -53,11 +53,11 @@ export default function TimelineSection() {
     setIndex((p) => (p - 1 + timelineData.length) % timelineData.length);
 
   return (
-    <section className="w-full bg-white py-20">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="w-full bg-white py-20 image-with-event">
+      <div className="max-w-6xl mx-auto px-4 inner-content">
 
         {/* MAIN GRID */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-center flex-inner">
 
           {/* IMAGE */}
           <div className="relative">
@@ -69,7 +69,7 @@ export default function TimelineSection() {
           </div>
 
           {/* CONTENT */}
-          <div className="space-y-4 transition-all duration-500">
+          <div className="space-y-4 transition-all duration-500 right-inner">
             <p className="text-sm font-bold text-gray-500">
               {timelineData[index].year}
             </p>
@@ -86,27 +86,29 @@ export default function TimelineSection() {
               {timelineData[index].text}
             </p>
 
-            {/* NAV BUTTONS */}
-            <div className="flex gap-3 pt-4">
+           
+          </div>
+          
+        </div>
+         {/* NAV BUTTONS */}
+            <div className="flex gap-3 pt-4 carousel-arrow">
               <button
                 onClick={prev}
-                className="px-4 py-2 border rounded hover:bg-black hover:text-white"
+                className="px-4 py-2 border rounded hover:bg-black hover:text-white icon"
               >
-                Prev
+                ‹
               </button>
 
               <button
                 onClick={next}
-                className="px-4 py-2 border rounded hover:bg-black hover:text-white"
+                className="px-4 py-2 border rounded hover:bg-black hover:text-white icon"
               >
-                Next
+                ›
               </button>
             </div>
-          </div>
-        </div>
 
         {/* TIMELINE NAV */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
+        <div className="flex flex-wrap justify-center gap-4 mt-10 event-timeline">
           {timelineData.map((item, i) => (
             <button
               key={i}

@@ -27,7 +27,7 @@ export default function TextSliderWithImage() {
   };
 
   return (
-    <div className="section">
+    <div className="section text-with-image-section">
       <div className="container">
 
         {/* SLIDER */}

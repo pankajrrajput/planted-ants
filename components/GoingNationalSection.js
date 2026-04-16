@@ -2,7 +2,7 @@
 
 export default function GoingNationalSection() {
   return (
-    <div className="section section--narrow section-blends section-full">
+    <div className="section section--narrow section-blends section-full content-section-with-image">
       
       <div className="grid md:grid-cols-2 gap-10 items-start">
 
@@ -12,9 +12,9 @@ export default function GoingNationalSection() {
         <div className="space-y-20">
 
           {/* ITEM 01 */}
-          <div className="opacity-100 transition-all">
+          <div className="opacity-100 transition-all left-content">
             <span className="text-sm font-bold">01</span>
-            <div className="sticky top-20">
+            <div className="image-item">
             <img
                 src="/images/going_national.webp"
                 alt="Going National"
@@ -43,7 +43,7 @@ export default function GoingNationalSection() {
         </div>
 
         {/* IMAGE (STATIC ON DESKTOP) */}
-        <div className="sticky top-20">
+        <div className="sticky top-20 right-content">
           <img
             src="/images/going_national.webp"
             alt="Going National"

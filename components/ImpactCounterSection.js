@@ -57,7 +57,7 @@ export default function ImpactCounterSection() {
   return (
     <div
       ref={ref}
-      className="section section-boxed bg-custom"
+      className="section section-boxed bg-custom impact-section"
       style={{ background: "rgb(240 240 240)" }}
     >
       <div className="impact-text impact-text--center">

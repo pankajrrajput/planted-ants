@@ -35,9 +35,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-16 bg-white contact-section">
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 contact-inner">
 
         {/* LEFT TEXT */}
         <div>
@@ -48,11 +48,12 @@ export default function ContactSection() {
         </div>
 
         {/* FORM */}
-        <div className="bg-gray-50 p-6 rounded-md">
+        <div className="bg-gray-50 p-6 rounded-md form-content">
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
             {/* NAME */}
+            <div class="wrap-item">
             <input
               type="text"
               name="name"
@@ -73,6 +74,7 @@ export default function ContactSection() {
               required
               className="w-full p-3 border rounded-md"
             />
+            </div>  
 
             {/* MESSAGE */}
             <textarea

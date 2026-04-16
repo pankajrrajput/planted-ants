@@ -11,10 +11,8 @@ export default function NewsletterSection() {
 
   return (
     <section
-      className="w-full py-20"
-      style={{ backgroundColor: "rgb(255, 183, 74)" }}
-    >
-      <div className="max-w-3xl mx-auto px-6 text-center">
+      className="w-full py-20 news-letter-section">
+      <div className="max-w-3xl mx-auto px-6 text-center news-inner">
         <h2 className="text-3xl font-bold">
           Get 10% off your first ANT order.
         </h2>

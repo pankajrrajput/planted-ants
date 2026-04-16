@@ -26,10 +26,10 @@ export default function StartAdventureSection() {
   ];
 
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-16 bg-white product-section">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-4">
-        <div>
+      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-4 top-head-inner">
+        <div class="content">
           <h2 className="text-3xl font-bold">
             Start your adventure with a queen ant.
           </h2>
@@ -39,18 +39,21 @@ export default function StartAdventureSection() {
           </p>
           <p>Click a species down below to get started.</p>
         </div>
-
+<div class="arrow-icon">
         <a
           href={buildShopifyUrl("/collections/ants-for-sale")}
           className="text-blue-600 font-medium flex items-center gap-2"
         >
-          View all →
+          View all <div class="svg-arrow"><svg role="presentation" focusable="false" width="5" height="8" class="icon icon-chevron-right-small reverse-icon" viewBox="0 0 5 8">
+        <path d="m.75 7 3-3-3-3" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+      </svg></div>
         </a>
+        </div>
       </div>
 
       {/* Carousel (simple scroll row instead of Shopify scroll-carousel) */}
-      <div className="mt-10 overflow-x-auto px-6">
-        <div className="flex gap-6 w-max">
+      <div className="mt-10 overflow-x-auto px-6 product-inner">
+        <div className="flex gap-6 w-max about-product">
           {products.map((p, idx) => (
             <a
               key={idx}

@@ -2,7 +2,7 @@
 
 export default function AccidentalBeginning() {
   return (
-    <div className="section">
+    <div className="section left-image-right-content">
       <div className="container">
 
         {/* IMAGE */}

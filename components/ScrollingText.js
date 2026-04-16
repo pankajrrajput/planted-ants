@@ -2,7 +2,7 @@
 
 export default function ScrollingText() {
   return (
-    <div className="overflow-hidden py-6 bg-white">
+    <div className="overflow-hidden py-6 bg-white marquee-section">
       
       <div className="whitespace-nowrap flex animate-marquee">
         
@@ -10,7 +10,7 @@ export default function ScrollingText() {
         {[...Array(8)].map((_, i) => (
           <span
             key={i}
-            className="mx-8 text-3xl md:text-5xl font-bold bg-gradient-to-b from-yellow-300 to-red-500 bg-clip-text text-transparent"
+            className="mx-8 text-3xl md:text-9xl font-bold bg-gradient-to-b from-yellow-300 to-red-500 bg-clip-text text-transparent"
           >
             Meet the Team
           </span>
