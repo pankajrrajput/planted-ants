@@ -2,8 +2,8 @@
 
 export default function MediaWithText1() {
   return (
-    <section className="w-full bg-black text-white py-16 px-4">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <section className="w-full  text-white py-16 px-4 media-section">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center inner-container">
 
         {/* IMAGE */}
         <div className="relative">
@@ -15,7 +15,7 @@ export default function MediaWithText1() {
         </div>
 
         {/* TEXT */}
-        <div className="text-center md:text-left space-y-4">
+        <div className="text-center md:text-left space-y-4 right-inner">
 
           {/* ICON */}
           <img

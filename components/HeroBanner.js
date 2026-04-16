@@ -12,7 +12,7 @@ export default function HeroBanner() {
       />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center story-section">
         <div className="text-center text-white px-6 max-w-2xl">
 
           <h1 className="text-3xl md:text-5xl font-bold mb-4">

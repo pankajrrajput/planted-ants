@@ -74,8 +74,8 @@ export default function TextWithIcons() {
   };
 
   return (
-    <div className="bg-gray-100 py-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div className="bg-gray-100 py-10 text-with-icon">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center icon-item-main">
         {items.map((item, i) => {
           const Icon = icons[item.icon];
 

@@ -44,9 +44,9 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 px-4">
+    <section className="w-full bg-white py-16 px-4 faq-section">
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 inner-container">
 
         {/* LEFT SIDE */}
         <div>
@@ -61,7 +61,7 @@ export default function FaqSection() {
           </p>
 
           {/* Support Box */}
-          <div className="hidden md:block bg-gray-50 p-4 rounded-md mb-6">
+          <div className="hidden md:block bg-gray-50 p-4 rounded-md mb-6 remove-bg">
             <p className="text-sm text-gray-700">
               Our customer support is available Monday to Friday: 8am-8:30pm PST.
               Average answer time: 15 minutes
@@ -77,12 +77,12 @@ export default function FaqSection() {
         </div>
 
         {/* RIGHT SIDE - ACCORDION */}
-        <div className="space-y-3">
+        <div className="space-y-3 faq_right">
 
           {faqs.map((item, index) => (
             <div
               key={index}
-              className="border rounded-md overflow-hidden"
+              className="faq-content"
             >
               {/* QUESTION */}
               <button
@@ -96,7 +96,9 @@ export default function FaqSection() {
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 >
-                  ▼
+                <svg role="presentation" focusable="false" width="8" height="6" class="icon icon-chevron-bottom-small" viewBox="0 0 8 6">
+        <path d="m1 1.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+      </svg>
                 </span>
               </button>
 

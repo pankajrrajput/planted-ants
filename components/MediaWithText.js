@@ -4,7 +4,7 @@ import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function MediaWithText() {
   return (
-    <div className="section">
+    <div className="section text-and-image">
       <div className="container">
 
         {/* IMAGE */}

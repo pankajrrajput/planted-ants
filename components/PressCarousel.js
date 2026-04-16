@@ -31,7 +31,7 @@ export default function PressCarousel() {
   };
 
   return (
-    <section className="section section-full">
+    <section className="section section-full testimonail-section">
       <div className="press">
 
         {/* Slider Window */}
@@ -46,7 +46,7 @@ export default function PressCarousel() {
             {testimonials.map((item, i) => (
               <div
                 key={i}
-                className="w-full flex-shrink-0 text-center px-6"
+                className="w-full flex-shrink-0 text-center px-6 quot-section"
               >
                 <blockquote className="h3">
                   {item.quote}

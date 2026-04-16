@@ -3,13 +3,13 @@
 export default function PressQuoteSection() {
   return (
     <div
-      className="section section-boxed bg-custom"
+      className="section section-boxed bg-custom quote-section"
       style={{
-        background: "rgb(255 183 74)",
+        
         "--text-color": "0 0 0",
       }}
     >
-      <div className="section-stack text-center max-w-3xl mx-auto">
+      <div className="section-stack text-center max-w-3xl mx-auto quote-inner">
 
         <blockquote className="blockquote">
           Our mission is to offer widespread sustainable access of ant-keeping

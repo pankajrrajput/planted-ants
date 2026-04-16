@@ -1,7 +1,7 @@
 export default function StorySection() {
   return (
-    <section className="bg-[#f0f0f0] py-16 px-4">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="bg-[#f0f0f0] py-16 px-4 about-story">
+      <div className="max-w-3xl mx-auto text-center inner-container">
         
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">

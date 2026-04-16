@@ -2,9 +2,9 @@ import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function WhyKeepAnts() {
   return (
-    <section className="section section-full py-16">
+    <section className="section section-full py-16 why-ant-section">
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 ant-content">
 
         {/* IMAGE */}
         <div className="w-full md:w-1/2">

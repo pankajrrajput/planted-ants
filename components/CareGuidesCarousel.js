@@ -34,8 +34,8 @@ export default function CareGuidesCarousel() {
   const slide = slides[index];
 
   return (
-    <div className="section section-full">
-      <div className="flex flex-col md:flex-row items-center gap-10">
+    <div className="section section-full beginner-section">
+      <div className="flex flex-col md:flex-row items-center gap-10 main-flex-item">
 
         {/* FIXED IMAGE (does NOT change) */}
         <div className="w-full md:w-1/2">
@@ -68,25 +68,26 @@ export default function CareGuidesCarousel() {
             </a>
           </div>
 
-          {/* CONTROLS */}
-          <div className="flex gap-3 mt-6">
+          
+
+        </div>
+      </div>
+      {/* CONTROLS */}
+          <div className="flex gap-3 mt-6 arrow-carousel">
             <button
               onClick={prev}
               className="px-3 py-2 border rounded-full"
             >
-              Prev
+              ‹
             </button>
 
             <button
               onClick={next}
               className="px-3 py-2 border rounded-full"
             >
-              Next
+             ›
             </button>
           </div>
-
-        </div>
-      </div>
     </div>
   );
 }
