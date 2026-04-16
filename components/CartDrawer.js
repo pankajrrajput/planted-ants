@@ -5,11 +5,23 @@ import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem }) {
   const handleCheckout = () => {
-    // Build Shopify cart URL with all cart items
-    const cartParams = cartItems.map(item => 
-      `${item.id}:${item.quantity}`
-    ).join(',');
-    
+    const validItems = cartItems
+      .map((item) => ({
+        id: String(item.id),
+        quantity: Number(item.quantity || 0),
+      }))
+      .filter((item) => item.quantity > 0)
+      .filter((item) => /^\d{10,}$/.test(item.id));
+
+    if (validItems.length === 0) {
+      window.location.href = buildShopifyUrl("/cart");
+      return;
+    }
+
+    const cartParams = validItems
+      .map((item) => `${item.id}:${item.quantity}`)
+      .join(",");
+
     window.location.href = buildShopifyUrl(`/cart/${cartParams}`);
   };
   const calculateTotal = () => {

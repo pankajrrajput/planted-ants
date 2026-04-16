@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "../contexts/CartContext";
 
 export default function Header() {
@@ -25,25 +25,11 @@ export default function Header() {
       updateQuantity(product.id, 1);
     }
   };
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
 
   return (
-    // <header className={`sticky top-0 z-[1001] bg-white border-b w-full main-header ${
-        isScrolled ? 'active' : ''
-      }`}>
-      <header className={`sticky main-header top-0 z-[1001] bg-white border-b ${
-        isScrolled ? 'active' : ''
-      }`}>
+    <header className={`sticky main-header top-0 z-[1001] bg-white border-b ${
+      isScrolled ? 'active' : ''
+    }`}>
       <div className="grid grid-cols-[1fr_auto_1fr] items-center px-10 py-4 max-w-[1400px] mx-auto">
 
         {/* LOGO */}

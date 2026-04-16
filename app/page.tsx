@@ -1,3 +1,5 @@
+'use client'
+import { useEffect } from 'react';
 import Banner from '../components/Banner';
 import RichTextSection from '../components/RichTextSection';
 import ImagesWithTextSection from '../components/ImagesWithTextSection';
@@ -15,6 +17,14 @@ import ContactSection from '../components/ContactSection';
 
 
 export default function Home() {
+
+  useEffect(() => {
+    document.body.classList.add('home-page');
+
+    return () => {
+      document.body.classList.remove('home-page');
+    };
+  }, []);
   return (
     <main className="anchor" id="main" role="main">
       <Banner />
