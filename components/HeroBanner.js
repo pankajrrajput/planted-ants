@@ -2,7 +2,7 @@ import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function HeroBanner() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden our-story">
 
       {/* BACKGROUND IMAGE (fixed) */}
       <img

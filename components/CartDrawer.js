@@ -34,10 +34,10 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
 
   return isOpen ? (
       <div
-        className="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl z-[998] transform transition-transform duration-300 ease-in-out translate-x-0"
+        className="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl z-[998] transform transition-transform duration-300 ease-in-out translate-x-0 card-drower"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b pt-20">
+        <div className="flex items-center justify-between p-6 border-b pt-2 card-item">
           <h2 className="text-xl font-semibold">
             Shopping Cart ({getTotalItems()} {getTotalItems() === 1 ? 'item' : 'items'})
           </h2>
@@ -62,7 +62,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
         </div>
 
         {/* Cart Items */}
-        <div className="flex-1 overflow-y-auto p-6" style={{ maxHeight: 'calc(100vh - 200px)' }}>
+        <div className="flex-1 overflow-y-auto p-6 card-inner" style={{ maxHeight: 'calc(100vh - 200px)' }}>
           {cartItems.length === 0 ? (
             <div className="text-center py-12">
               <svg
@@ -104,14 +104,14 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition-colors"
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition-colors border-color"
                       >
                         -
                       </button>
                       <span className="w-8 text-center">{item.quantity}</span>
                       <button
                         onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition-colors"
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition-colors border-color"
                       >
                         +
                       </button>
@@ -131,23 +131,25 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
 
         {/* Footer */}
         {cartItems.length > 0 && (
-          <div className="border-t p-6 bg-white">
+          <div className="border-t p-6 bg-white card-total">
             <div className="flex justify-between mb-4">
               <span className="font-semibold">Total:</span>
               <span className="font-bold text-xl">${calculateTotal()}</span>
             </div>
+            <div class="btn-wrap">
             <button 
               onClick={handleCheckout}
-              className="w-full py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors font-medium"
+              className="w-full py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors font-medium first-btn"
             >
               Checkout
             </button>
             <button
               onClick={onClose}
-              className="w-full py-3 mt-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+              className="w-full py-3 mt-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors second-btn"
             >
               Continue Shopping
             </button>
+            </div>
           </div>
         )}
       </div>
