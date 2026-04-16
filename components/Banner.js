@@ -4,7 +4,7 @@ export default function Banner() {
   const buttonHref = buildShopifyUrl("/collections/ants-for-sale");
   return (
     <div
-      className="slideshow"
+      className="slideshow slider-banner"
       style={{ "--slideshow-controls-color": "255 255 255" }}
     >
       <div
