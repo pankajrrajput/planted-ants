@@ -24,7 +24,7 @@ export default function MultipleImagesWithTextSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className="section section--narrow section-blends section-full">
+    <div className="section section--narrow section-blends section-full multpal-iamge-section">
       <div className="multiple-images-with-text">
 
         <div className="multiple-images-with-text__image-list">
@@ -61,7 +61,9 @@ export default function MultipleImagesWithTextSlider() {
             </div>
           </div>
 
-          <div className="prev-next-buttons">
+         
+        </div>
+        <div className="prev-next-buttons">
             <button
               type="button"
               onClick={() =>
@@ -72,7 +74,7 @@ export default function MultipleImagesWithTextSlider() {
                 )
               }
             >
-              Previous
+       ‹
             </button>
 
             <button
@@ -85,12 +87,12 @@ export default function MultipleImagesWithTextSlider() {
                 )
               }
             >
-              Next
+              ›
             </button>
           </div>
-        </div>
 
       </div>
+       
     </div>
   );
 }

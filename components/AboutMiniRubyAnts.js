@@ -1,7 +1,7 @@
 export default function AboutMiniRubyAnts() {
   return (
-    <div className="section section-blends section-full">
-      <div className="section-stack section-stack--horizontal">
+    <div className="section section-blends section-full about-ant">
+      <div className="section-stack section-stack--horizontal wrap-container">
         <div className="section-stack__intro">
           <div className="prose">
             <p className="bold">About Mini Ruby Ants:</p>

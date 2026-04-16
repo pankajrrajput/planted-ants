@@ -21,7 +21,7 @@ export default function Header() {
       <header className={`sticky main-header top-0 z-[1001] bg-white border-b ${
         isScrolled ? 'active' : ''
       }`}>
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center px-10 py-4 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center px-10 py-4 max-w-[1400px] mx-auto header-inner">
 
         {/* LOGO */}
         <div className="flex items-center justify-start">

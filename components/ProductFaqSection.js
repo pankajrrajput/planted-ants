@@ -67,8 +67,8 @@ export default function ProductFaqSection() {
   ];
 
   return (
-    <div className="section section-blends section-full">
-      <div className="section-stack section-stack--center">
+    <div className="section section-blends section-full product-faq">
+      <div className="section-stack section-stack--center faq-inner">
         {/* INTRO */}
         <div className="section-stack__intro">
           <div className="v-stack gap-10">
@@ -93,7 +93,9 @@ export default function ProductFaqSection() {
                   <div className="accordion__toggle bold">
                     <span>{item.question}</span>
                     <span className="circle-chevron">
-                      ▼
+                      <svg role="presentation" focusable="false" width="8" height="6" class="icon icon-chevron-bottom-small" viewBox="0 0 8 6">
+        <path d="m1 1.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+      </svg>
                     </span>
                   </div>
                 </summary>

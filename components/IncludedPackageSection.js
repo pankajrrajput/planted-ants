@@ -1,7 +1,7 @@
 export default function IncludedPackageSection() {
   return (
     <div
-      className="section section-boxed bg-custom"
+      className="section section-boxed bg-custom yellow-text-iamge-section"
       style={{ "--background": "255 183 74" }}
     >
       <div className="section-stack">

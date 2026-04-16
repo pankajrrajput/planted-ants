@@ -46,13 +46,14 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="section section--tight section-blends section-full">
+    <div className="section section--tight section-blends section-full main-porduct-section">
       <div className="product">
 
         {/* LEFT SIDE */}
         <div className="product-left-side">
 
           {/* MAIN IMAGE */}
+          <div class="product-wrap">
           <div className="product-gallery__main">
             <img
               src={activeImage}
@@ -75,6 +76,7 @@ export default function ProductPage() {
                 <img src={img.thumb} alt={`thumb-${i}`} className="rounded" />
               </div>
             ))}
+          </div>
           </div>
 
 

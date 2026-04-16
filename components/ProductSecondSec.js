@@ -45,7 +45,7 @@ export default function ProductSecondSec() {
   };
 
   return (
-    <div className="section section--tight section-blends section-full">
+    <div className="section section--tight section-blends section-full product-section-two">
       <div className="product">
 
         {/* LEFT SIDE */}
