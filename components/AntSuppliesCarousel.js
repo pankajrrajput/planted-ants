@@ -20,7 +20,7 @@ export default function AntSuppliesCarousel() {
         <div className="carousel">
 
           <ProductCard
-            id={4}
+            id={45686276423961}
             title="Appleburst Ant Nectar"
             price={25.99}
             displayPrice="$25.99"
@@ -31,7 +31,7 @@ export default function AntSuppliesCarousel() {
           />
 
           <ProductCard
-            id={5}
+            id={45686276686105}
             title="Fluon"
             price={29.95}
             displayPrice="$29.95"
