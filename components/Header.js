@@ -6,8 +6,11 @@ import { useCart } from "../contexts/CartContext";
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubMenu, setMobileSubMenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
+  
   const {
     cartItems,
     isCartOpen,
@@ -128,7 +131,12 @@ export default function Header() {
           
           {/* MOBILE TOGGLE */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+              if (mobileMenuOpen) {
+                setMobileSubMenu(null);
+              }
+            }}
             className="md:hidden text-2xl"
           >
             {mobileMenuOpen ? "✕" : "☰"}
@@ -171,45 +179,157 @@ export default function Header() {
         </div>
       </div>
 
+     
       {/* MOBILE MENU */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileMenuOpen ? "max-h-[400px]" : "max-h-0"
-        }`}
-      >
-        <div className="bg-white border-t shadow-lg px-6 py-4">
-          <ul className="flex flex-col gap-4 font-semibold uppercase text-gray-900">
-            <li>
-              <a href="/" onClick={() => setMobileMenuOpen(false)}>
-                Home
+<div
+  className={`md:hidden overflow-hidden transition-all duration-300 ${
+    mobileMenuOpen ? "max-h-[1000px]" : "max-h-0"
+  }`}
+>
+  <div className="bg-white border-t shadow-lg px-4 py-4">
+
+    <ul className="flex flex-col gap-4 font-semibold uppercase text-gray-900">
+
+      {/* SHOP */}
+      <li>
+        <button
+          onClick={() =>
+            setMobileSubMenu(
+              mobileSubMenu === "shop" ? null : "shop"
+            )
+          }
+          className="w-full flex justify-between items-center py-2"
+        >
+          SHOP
+          <span>{mobileSubMenu === "shop" ? "-" : "+"}</span>
+        </button>
+
+        {mobileSubMenu === "shop" && (
+          <div className="pl-4 pt-3 space-y-4">
+            <div>
+              <h4 className="font-bold text-sm mb-2">SHOP ANTS</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#">Beginner Ants</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-sm mb-2">SHOP SUPPLIES</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#">Liquid Feeders</a></li>
+                <li><a href="#">Ant Nests</a></li>
+                <li><a href="#">Ant Nectar</a></li>
+                <li><a href="#">Ant Food</a></li>
+              </ul>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <a href="#" className="text-center">
+                <img
+                  src="/images/ants_for_sale.webp"
+                  className="w-full h-24 object-cover rounded"
+                  alt=""
+                />
+                <p className="text-xs mt-2">ANTS FOR SALE</p>
               </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => setMobileMenuOpen(false)}>
-                Shop
+
+              <a href="#" className="text-center">
+                <img
+                  src="/images/supplies.webp"
+                  className="w-full h-24 object-cover rounded"
+                  alt=""
+                />
+                <p className="text-xs mt-2">SUPPLIES</p>
               </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => setMobileMenuOpen(false)}>
-                Learn
+            </div>
+          </div>
+        )}
+      </li>
+
+      {/* LEARN */}
+      <li>
+        <button
+          onClick={() =>
+            setMobileSubMenu(
+              mobileSubMenu === "learn" ? null : "learn"
+            )
+          }
+          className="w-full flex justify-between items-center py-2"
+        >
+          LEARN
+          <span>{mobileSubMenu === "learn" ? "-" : "+"}</span>
+        </button>
+
+        {mobileSubMenu === "learn" && (
+          <div className="pl-4 pt-3 space-y-4">
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><a href="#">Ant Care Guides</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+
+            <a href="#" className="block">
+              <img
+                src="/images/story.webp"
+                className="w-full h-28 object-cover rounded"
+                alt=""
+              />
+              <p className="text-xs mt-2">OUR STORY</p>
+            </a>
+          </div>
+        )}
+      </li>
+
+      {/* OUR STORY */}
+      <li>
+        <a href="/our-story">OUR STORY</a>
+      </li>
+
+      {/* INFO */}
+      <li>
+        <button
+          onClick={() =>
+            setMobileSubMenu(
+              mobileSubMenu === "info" ? null : "info"
+            )
+          }
+          className="w-full flex justify-between items-center py-2"
+        >
+          INFO
+          <span>{mobileSubMenu === "info" ? "-" : "+"}</span>
+        </button>
+
+        {mobileSubMenu === "info" && (
+          <div className="pl-4 pt-3 space-y-4">
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><a href="#">Shipping Information</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Track Order</a></li>
+            </ul>
+
+            <div className="grid grid-cols-2 gap-3">
+              <a href="#">
+                <img
+                  src="/images/contact.jpg"
+                  className="w-full h-24 object-cover rounded"
+                  alt=""
+                />
               </a>
-            </li>
-            <li>
-              <a
-                href="/our-story"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Our Story
+
+              <a href="#">
+                <img
+                  src="/images/track.jpg"
+                  className="w-full h-24 object-cover rounded"
+                  alt=""
+                />
               </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => setMobileMenuOpen(false)}>
-                Info
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+            </div>
+          </div>
+        )}
+      </li>
+    </ul>
+  </div>
+</div>
     </header>
   );
 }
