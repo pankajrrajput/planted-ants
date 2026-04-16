@@ -1,8 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { buildShopifyUrl } from "../lib/shopifyUrl";
 
 export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem }) {
+  const handleCheckout = () => {
+    // Build Shopify cart URL with all cart items
+    const cartParams = cartItems.map(item => 
+      `${item.id}:${item.quantity}`
+    ).join(',');
+    
+    window.location.href = buildShopifyUrl(`/cart/${cartParams}`);
+  };
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
@@ -115,7 +124,10 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
               <span className="font-semibold">Total:</span>
               <span className="font-bold text-xl">${calculateTotal()}</span>
             </div>
-            <button className="w-full py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors font-medium">
+            <button 
+              onClick={handleCheckout}
+              className="w-full py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors font-medium"
+            >
               Checkout
             </button>
             <button

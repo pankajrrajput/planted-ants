@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useCart } from "../contexts/CartContext";
 import { buildShopifyUrl } from "../lib/shopifyUrl";
 
-
-
 export default function ProductPage() {
+  const { addToCart } = useCart();
+
   const productImages = [
     { thumb: "/images/thumb-1.webp", large: "/images/large-1.webp" },
     { thumb: "/images/thumb-2.png", large: "/images/large-2.png" },
@@ -40,9 +41,12 @@ export default function ProductPage() {
   const [selectedVariant, setSelectedVariant] = useState(variants[0]);
 
   const handleAddToCart = () => {
-    window.location.assign(
-      buildShopifyUrl(`/cart/${selectedVariant.variantId}:1`)
-    );
+    addToCart({
+      id: selectedVariant.variantId,
+      name: `Mini Ruby Ants (${selectedVariant.label})`,
+      price: selectedVariant.price,
+      image: activeImage
+    });
   };
 
   return (
