@@ -5,33 +5,36 @@ import { useCart } from "../contexts/CartContext";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { cartItems, isCartOpen, updateQuantity, removeItem, getTotalItems, closeCart, openCart } = useCart();
+
+  const {
+    cartItems,
+    isCartOpen,
+    updateQuantity,
+    removeItem,
+    getTotalItems,
+    closeCart,
+    openCart,
+  } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const addToCart = (product) => {
-    const existingItem = cartItems.find(item => item.id === product.id);
-    if (existingItem) {
-      updateQuantity(product.id, existingItem.quantity + 1);
-    } else {
-      updateQuantity(product.id, 1);
-    }
-  };
-
   return (
-    <header className={`sticky main-header top-0 z-[1001] bg-white border-b ${
-      isScrolled ? 'active' : ''
-    }`}>
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center px-10 py-4 max-w-[1400px] mx-auto">
-
+    <header
+      className={`sticky main-header top-0 z-[1001] bg-white border-b ${
+        isScrolled ? "active" : ""
+      }`}
+    >
+      <div className="grid grid-cols-[1fr_auto_1fr] md:grid-cols-[1fr_auto_1fr] items-center px-4 md:px-10 py-4 max-w-[1400px] mx-auto">
+        
         {/* LOGO */}
         <div className="flex items-center justify-start">
           <a href="/" className="block">
@@ -40,13 +43,13 @@ export default function Header() {
               alt="Logo"
               width={255}
               height={107}
-              className="h-auto max-w-[180px] md:max-w-[220px] object-contain"
+              className="h-auto max-w-[140px] md:max-w-[220px] object-contain"
             />
           </a>
         </div>
 
-        {/* NAV */}
-        <nav className="flex justify-center items-center">
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex justify-center items-center">
           <ul className="flex items-center gap-8 font-semibold text-gray-900 uppercase tracking-wide">
 
             {/* SHOP */}
@@ -59,51 +62,18 @@ export default function Header() {
               >
                 SHOP
                 <svg width="10" height="7" className="ml-1">
-                  <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="2"></path>
+                  <path
+                    d="m1 1 4 4 4-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </button>
 
               {openMenu === "shop" && (
-                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn">
-
-                  <div className="flex gap-20">
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3 text-black">SHOP ANTS</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">Beginner Ants</a></li>
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3 text-black">SHOP SUPPLIES</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li className="hover:text-black cursor-pointer">Liquid Feeders</li>
-                        <li className="hover:text-black cursor-pointer">Ant Nests</li>
-                        <li className="hover:text-black cursor-pointer">Ant Nectar</li>
-                        <li className="hover:text-black cursor-pointer">Ant Food</li>
-                        <li className="hover:text-black cursor-pointer">Accessories</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-6 items-start">
-                    <a href="#" className="flex flex-col items-center text-center group">
-                      <img
-                        src="/images/ants_for_sale.webp"
-                        className="w-48 h-32 object-cover rounded-md transition duration-300 group-hover:scale-105"
-                      />
-                      <p className="mt-2 font-semibold text-sm tracking-wide">ANTS FOR SALE</p>
-                    </a>
-
-                    <a href="#" className="flex flex-col items-center text-center group">
-                      <img
-                        src="/images/supplies.webp"
-                        className="w-48 h-32 object-cover rounded-md transition duration-300 group-hover:scale-105"
-                      />
-                      <p className="mt-2 font-semibold text-sm tracking-wide">SUPPLIES FOR SALE</p>
-                    </a>
-                  </div>
-
+                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10">
+                  Shop Menu
                 </div>
               )}
             </li>
@@ -118,64 +88,20 @@ export default function Header() {
               >
                 LEARN
                 <svg width="10" height="7" className="ml-1">
-                  <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="2"></path>
+                  <path
+                    d="m1 1 4 4 4-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </button>
-
-              {openMenu === "learn" && (
-                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn">
-
-                  <div className="flex gap-20">
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3">Ant Care Guides</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">Carpenter Ant Guide</a></li>
-                        <li><a href="#" className="hover:text-black">Honeypot Ant Guide</a></li>
-                        <li><a href="#" className="hover:text-black">Harvester Ant Guide</a></li>
-                        <li><a href="#" className="hover:text-black">Leafcutter Guide</a></li>
-                        <li><a href="#" className="hover:text-black">Other Care Guides</a></li>
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3">Our Story</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">Who are we?</a></li>
-                        <li><a href="#" className="hover:text-black">Meet us at conventions</a></li>
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3">FAQ</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">General Questions</a></li>
-                        <li><a href="#" className="hover:text-black">Ant Keeping Basics</a></li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-6 items-start">
-                    <a href="#" className="flex flex-col items-center text-center group">
-                      <img
-                        src="/images/story.webp"
-                        className="w-48 h-32 object-cover rounded-md transition duration-300 group-hover:scale-105"
-                      />
-                      <p className="mt-2 font-semibold text-sm tracking-wide">OUR STORY</p>
-                    </a>
-                  </div>
-
-                </div>
-              )}
             </li>
 
-            {/* OUR STORY */}
-            <li className="flex items-center">
-              <a href="/our-story" className="hover:text-gray-600 transition">
-                Our Story
-              </a>
+            <li>
+              <a href="/our-story">Our Story</a>
             </li>
 
-            {/* INFO */}
             <li className="relative flex items-center">
               <button
                 className="flex items-center gap-1 hover:text-gray-600 transition duration-200"
@@ -185,67 +111,30 @@ export default function Header() {
               >
                 INFO
                 <svg width="10" height="7" className="ml-1">
-                  <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="2"></path>
+                  <path
+                    d="m1 1 4 4 4-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </button>
-
-              {openMenu === "info" && (
-                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn">
-
-                  <div className="flex gap-20">
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3">Shipping Information</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">Return Policy</a></li>
-                        <li><a href="#" className="hover:text-black">Shipping Rules</a></li>
-                        <li><a href="#" className="hover:text-black">100% Live Guarantee</a></li>
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3">Permits + Privacy</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">Disclaimer + Permit Conditions</a></li>
-                        <li><a href="#" className="hover:text-black">Privacy Policy</a></li>
-                        <li><a href="#" className="hover:text-black">Terms & Conditions</a></li>
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-col">
-                      <h4 className="font-bold mb-3">Track Order</h4>
-                      <ul className="flex flex-col gap-2 text-gray-600">
-                        <li><a href="#" className="hover:text-black">Track Your Order</a></li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-6 items-start">
-                    <a href="#" className="flex flex-col items-center text-center group">
-                      <img
-                        src="/images/contact.jpg"
-                        className="w-48 h-32 object-cover rounded-md transition duration-300 group-hover:scale-105"
-                      />
-                      <p className="mt-2 font-semibold text-sm tracking-wide">CONTACT US</p>
-                    </a>
-
-                    <a href="#" className="flex flex-col items-center text-center group">
-                      <img
-                        src="/images/track.jpg"
-                        className="w-48 h-32 object-cover rounded-md transition duration-300 group-hover:scale-105"
-                      />
-                      <p className="mt-2 font-semibold text-sm tracking-wide">TRACK ORDER</p>
-                    </a>
-                  </div>
-
-                </div>
-              )}
             </li>
-
           </ul>
         </nav>
 
-        {/* CART */}
-        <div className="flex justify-end">
+        {/* RIGHT SIDE */}
+        <div className="flex justify-end items-center gap-4">
+          
+          {/* MOBILE TOGGLE */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-2xl"
+          >
+            {mobileMenuOpen ? "✕" : "☰"}
+          </button>
+
+          {/* CART */}
           <button
             onClick={openCart}
             className="relative text-xl hover:opacity-80 transition-colors"
@@ -266,8 +155,13 @@ export default function Header() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <path d="M6 9H18" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M6 9H18"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
+
             {getTotalItems() > 0 && (
               <span className="absolute -top-2 -right-3 bg-black text-white text-xs px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
                 {getTotalItems()}
@@ -275,9 +169,47 @@ export default function Header() {
             )}
           </button>
         </div>
-
       </div>
 
+      {/* MOBILE MENU */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          mobileMenuOpen ? "max-h-[400px]" : "max-h-0"
+        }`}
+      >
+        <div className="bg-white border-t shadow-lg px-6 py-4">
+          <ul className="flex flex-col gap-4 font-semibold uppercase text-gray-900">
+            <li>
+              <a href="/" onClick={() => setMobileMenuOpen(false)}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={() => setMobileMenuOpen(false)}>
+                Shop
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={() => setMobileMenuOpen(false)}>
+                Learn
+              </a>
+            </li>
+            <li>
+              <a
+                href="/our-story"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Story
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={() => setMobileMenuOpen(false)}>
+                Info
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }

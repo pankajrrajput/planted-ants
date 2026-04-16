@@ -45,7 +45,7 @@ export default function StartAdventureSection() {
           className="text-blue-600 font-medium flex items-center gap-2"
         >
           View all <div className="svg-arrow"><svg role="presentation" focusable="false" width="5" height="8" className="icon icon-chevron-right-small reverse-icon" viewBox="0 0 5 8">
-        <path d="m.75 7 3-3-3-3" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+        <path d="m.75 7 3-3-3-3" fill="none" stroke="currentColor" strokewidth="1.5"></path>
       </svg></div>
         </a>
         </div>
