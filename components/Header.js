@@ -75,7 +75,7 @@ export default function Header() {
               </button>
 
               {openMenu === "shop" && (
-                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn">
+                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn shop-menu">
 
                   <div className="flex gap-20">
                     <div className="flex flex-col">
@@ -134,7 +134,7 @@ export default function Header() {
               </button>
 
               {openMenu === "learn" && (
-                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn">
+                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn learn-menu">
 
                   <div className="flex gap-20">
                     <div className="flex flex-col">
@@ -201,7 +201,7 @@ export default function Header() {
               </button>
 
               {openMenu === "info" && (
-                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn">
+                <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn info-menu">
 
                   <div className="flex gap-20">
                     <div className="flex flex-col">
