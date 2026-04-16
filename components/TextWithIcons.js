@@ -17,55 +17,15 @@ export default function TextWithIcons() {
     },
   ];
   const BoxIcon = () => (
-    <svg
-      role="presentation"
-      fill="none"
-      focusable="false"
-      strokeWidth="2"
-      width="24"
-      height="24"
-      className="hidden sm:block icon icon-picto-box"
-      viewBox="0 0 24 24"
-    >
-      <path d="M2.22 5.472a.742.742 0 0 0-.33.194..." stroke="currentColor" />
-      <path d="M22.269 5.997a.771.771 0 0 0-.16-.335..." fill="currentColor" />
-      <path d="m17.5 8.255-5.215 2.03h-.571..." stroke="currentColor" />
-    </svg>
+    <img src="/images/icon1.png" alt="Box Icon" />
   );
 
   const SupportIcon = () => (
-    <svg
-      role="presentation"
-      fill="none"
-      focusable="false"
-      strokeWidth="2"
-      width="24"
-      height="24"
-      className="hidden sm:block icon icon-picto-customer-support"
-      viewBox="0 0 24 24"
-    >
-      <path d="M1.714 14.143c0-3.919..." fill="currentColor" />
-      <path d="M2.38 11.263C2.524 6.537..." stroke="currentColor" />
-    </svg>
+    <img src="/images/icon2.png" alt="Support Icon" />
   );
 
   const HeartIcon = () => (
-    <svg
-      role="presentation"
-      fill="none"
-      focusable="false"
-      strokeWidth="2"
-      width="24"
-      height="24"
-      className="hidden sm:block icon icon-picto-love"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M12 5.457C6.823-.895 1.358 3.619..."
-        fill="currentColor"
-        stroke="currentColor"
-      />
-    </svg>
+    <img src="/images/icon3.png" alt="Heart Icon" />
   );
   const icons = {
     box: BoxIcon,

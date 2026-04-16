@@ -53,7 +53,7 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="space-y-4">
 
             {/* NAME */}
-            <div class="wrap-item">
+            <div className="wrap-item">
             <input
               type="text"
               name="name"

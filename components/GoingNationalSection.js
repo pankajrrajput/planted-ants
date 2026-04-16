@@ -29,14 +29,11 @@ export default function GoingNationalSection() {
             </h2>
 
             <p className="mt-4 text-base leading-relaxed">
-              Seven years, an ant-based incubation room, over 15 different ant species,
-              and a lot of innovation later, we are now a licensed biological company
-              and are able to provide ants outside of California to 46 out of the 48 states.
+              Seven years, an ant-based incubation room, over 15 different ant species, and a lot of innovation later, we are now an licensed biological company and are able to provide ants outside of California to 46 out of the 48 states and sell these organisms on a state by state basis. All you have to do is purchase, and the ants will arrive within 24-48 hours after your purchase.
             </p>
 
             <p className="mt-4 text-base leading-relaxed">
-              We're still a small start-up, but every day we're getting closer to our mission.
-              The ant named bobette remains in our heart.
+              We're still a small start-up, but every day we're getting closer to our mission. Meanwhile, the little ant named bobette, which inspired our company and our name after dying next to a plant, remains in our heart -- and now she gets a good night’s sleep. 
             </p>
           </div>
 

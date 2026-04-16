@@ -74,7 +74,7 @@ export default function ImpactCounterSection() {
             </h3>
 
             <p>
-              Here at Planted ANTS, your satisfaction is our #1 policy.
+              Here at Planted ANTS, your satisfaction is our #1 policy. Kushal and Pan are committed to not only making ant keeping a fun and rewarding hobby, but make these little ants part of your family. Our team consists of very experienced keepers and we are committed to providing you with the most top quality and healthy ants or your money back in credit. Seriously, no loop holes.
             </p>
 
             <a

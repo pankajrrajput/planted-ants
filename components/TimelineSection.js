@@ -5,43 +5,43 @@ import { useState } from "react";
 const timelineData = [
   {
     year: "2016",
-    title: "Kushal takes care of bobette.",
-    subtitle: "Kushal's first pet ant",
+    title: "2016: Our First Pet Ant",
+    subtitle: "Kushal takes care of bobette.",
     text: "In high-school, we took care of bobette for a couple months in a small container.",
     image:
-      "https://theantzone.com/cdn/shop/files/IMG_7687_1.png?v=1690927836",
+      "/images/1st-slider.webp",
   },
   {
     year: "2017",
-    title: "Beginnings of the brand.",
-    subtitle: "The start of a journey.",
-    text: "It all began with Kushal's deep intrigue for ants and their cooperative societies.",
+    title: "2017: The start of a journey.",
+    subtitle: "Beginnings of the brand.",
+    text: "It all began with Kushal's deep intrigue for these cute insects. Entranced by their cooperative societies and behaviors, he yearned to unlock the secrets of these tiny architects. </br> Armed with an unwavering commitment to excellence, Kushal set out on a mission to provide the finest ant colonies and ant farms and founded Planted ANTS.",
     image:
-      "https://theantzone.com/cdn/shop/files/IMG_8229_2.heic?v=1690339629",
+      "/images/1st-slider.webp",
   },
   {
     year: "2018",
-    title: "Our First Convention.",
-    subtitle: "Reptile Conventions",
-    text: "We started selling ants at reptile conventions and promoting responsible antkeeping.",
+    title: "2018: Reptile Conventions",
+    subtitle: "Our First Convention.",
+    text: "With a leap of faith and a passion for both reptiles and the mesmerizing world of ants, we eagerly embarked on a novel adventure – selling ants at reptile conventions! </br> The reptile conventions not only provided a platform to show our ants but also became an avenue to promote responsible antkeeping and conservation. Through discussions and educational materials, we sought to foster a deeper appreciation for these tiny yet essential creatures and their vital role in our ecosystem.",
     image:
-      "https://theantzone.com/cdn/shop/files/camponotus_discolor_for_sale.jpg?v=1690850721",
+      "/images/2nd-slide.webp",
   },
   {
     year: "2020",
-    title: "COVID hit harder than a truck.",
-    subtitle: "The Pandemic",
-    text: "We shifted from conventions to building our online shop plantedants.com.",
+    title: "2020: The Pandemic",
+    subtitle: "COVID hit harder than a truck.",
+    text: "The onset of the COVID-19 pandemic dealt a crushing blow to vending at conventions. The absence of in-person gatherings meant losing a vital platform for engagement with potential customers and fellow enthusiasts. </br> Amidst the disappointment and hardships, we had to adapt to survive. This is where our online shop plantedants.com was born.",
     image:
-      "https://theantzone.com/cdn/shop/files/IMG_7989.jpg?v=1690927832",
+      "/images/3rd-slide.webp",
   },
   {
     year: "2023",
-    title: "From Humble Beginnings to Today",
-    subtitle: "Where we are now",
-    text: "Planted ANTS has grown into a respected antkeeping company.",
+    title: "2023: Where we are now",
+    subtitle: "From Humble Beginnings to Today: The Full Story",
+    text: "As of 2023, Planted ANTS has journeyed far from its humble beginnings and evolved into a respected company in the world of antkeeping. </br> As we look ahead, we actively engage in promoting ethical practices and educating our customers about the vital role ants play in our ecosystem.",
     image:
-      "https://theantzone.com/cdn/shop/files/IMG_7989.jpg?v=1690927832",
+      "/images/4th-slide.webp",
   },
 ];
 

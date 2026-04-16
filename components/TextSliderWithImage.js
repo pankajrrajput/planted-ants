@@ -6,12 +6,12 @@ export default function TextSliderWithImage() {
   const slides = [
     {
       title: "Meet Kushal",
-      text: "Kushal's first experience with ants was his 7th grade science fair. He has collected different species ever since and turned his passion into a career.",
+      text: "Kushal's first experience with ants was his 7th grade science fair, in which he fed carpenter ants some mealworms. He was hooked after that, and has collected different species of ants ever since. He attended UC Berkeley, spent some time working on startups, and eventually ended up at a desk job. After deciding that desk jobs weren’t for him, he started plantedANTS as a way of turning his passion into a career. In his spare time Kushal enjoys vegetable gardening and reads too many Chinese novels.",
       image: "/images/meet-kashul.webp",
     },
     {
       title: "Meet Pan",
-      text: "Pan is the head graphic designer. She has loved insects since childhood and now helps with creative projects for Planted ANTS.",
+      text: "Pan is the head graphic designer for Planted ANTS. She loves watching insects since she was just a little kid. She loved drawing them growing up and decided to keep them later on. Now, she helps Kushal with many graphic design projects for Planted ANTS.",
       image: "/images/meet-pan.png",
     },
   ];

@@ -96,7 +96,7 @@ export default function FaqSection() {
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 >
-                <svg role="presentation" focusable="false" width="8" height="6" class="icon icon-chevron-bottom-small" viewBox="0 0 8 6">
+                <svg role="presentation" focusable="false" width="8" height="6" className="icon icon-chevron-bottom-small" viewBox="0 0 8 6">
         <path d="m1 1.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"></path>
       </svg>
                 </span>
