@@ -12320,6 +12320,9 @@ h3.font-medium.text-gray-900 {
     box-shadow: 0 20px 25px -5px #0000001a, 0 10px 10px -5px #0000000a;
     top: 75px;
 }
+body.home-page .main-header .sub-menu ul li a, body.home-page .main-header .sub-menu p {
+    color: #000;
+}
 
 .learn-menu {
     margin: calc(40% + 0vw);
