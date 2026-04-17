@@ -53,7 +53,7 @@ export default function Banner() {
                   href={buttonHref}
                   className="button button--xl bg-white text-black px-6 py-3 inline-block mt-4"
                 >
-                  QUEEN ANTS FOR SALE test
+                  QUEEN ANTS FOR SALE
                 </a>
               </div>
             </div>

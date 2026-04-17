@@ -7,7 +7,7 @@ export default function RichTextSection() {
 
           <div className="prose justify-items-center text-center">
 
-            <p className="h1 hyphenate">
+            <p className="h1 hyphenate ant-keeping-headeing">
               Ant-Keeping with a Queen
             </p>
 

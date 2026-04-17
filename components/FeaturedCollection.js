@@ -58,7 +58,7 @@ export default function FeaturedCollection() {
         {/* PRODUCTS */}
         <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4">
           {products.map((product, index) => (
-            <div key={index} className="min-w-[260px] bg-white">
+            <div key={index} className="min-w-[360px] bg-white">
             
                 <a
                   href={buildShopifyUrl(product.link)}

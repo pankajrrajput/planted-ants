@@ -7,6 +7,11 @@
   padding: 2.125rem;
 }
 
+
+header .header-wrapper-cst {
+    padding: 2.125rem;
+}
+
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -55,6 +60,10 @@
   margin-left: 15px;
   font-size: 18px;
   text-decoration: none;
+}
+
+header .icon {
+    color: #fff;
 }
 
 /* CART */
