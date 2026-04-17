@@ -8,22 +8,22 @@ export default function HotspotImageSection() {
   const hotspots = [
     {
       id: 1,
-      top: "28%",
-      left: "22%",
+      top: "71%",
+      left: "27%",
       title: "Ant Farm Bundles",
       text: "Shop the best ant farms on the market & everything else you need to get started",
     },
     {
       id: 2,
-      top: "45%",
-      left: "70%",
+      top: "27%",
+      left: "64%",
       title: "California Reptile Conventions!",
       text: "Meet us vending in person!",
     },
     {
       id: 3,
-      top: "72%",
-      left: "55%",
+      top: "63%",
+      left: "75%",
       title: "Care Guides",
       text: "We offer care guides for beginners!",
     },
@@ -76,6 +76,7 @@ export default function HotspotImageSection() {
                 fontSize: "24px",
                 fontWeight: "bold",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                textAlign: "center",
               }}
             >
               +
@@ -89,18 +90,18 @@ export default function HotspotImageSection() {
                   top: "55px",
                   left: "50%",
                   transform: "translateX(-50%)",
-                  width: "260px",
+                  width: "360px",
                   background: "#fff",
-                  padding: "16px",
+                  padding: "25px",
                   borderRadius: "10px",
                   boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
                   zIndex: 20,
                 }}
               >
-                <h4 style={{ marginBottom: "8px" }}>
+                <h4 style={{ marginBottom: "8px", fontSize: "20px", fontWeight: "700" }}>
                   {spot.title}
                 </h4>
-                <p style={{ fontSize: "14px" }}>
+                <p style={{ fontSize: "16px", marginTop: "10px" }}>
                   {spot.text}
                 </p>
               </div>

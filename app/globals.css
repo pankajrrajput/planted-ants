@@ -8,8 +8,8 @@
 @theme inline {
 --color-background: var(--background);
 --color-foreground: var(--foreground);
---font-sans: var(--font-geist-sans);
---font-mono: var(--font-geist-mono);
+--font-sans: 'Barlow', sans-serif;
+--font-mono: 'Barlow', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,11 +19,11 @@
 }
 }
 
-/* body {
+body {
 background: var(--background);
 color: var(--foreground);
-font-family: Arial, Helvetica, sans-serif;
-} */
+font-family: 'Barlow', sans-serif;
+}
 
 
 :root {
@@ -90,7 +90,7 @@ body {
 --text-color: var(--text-primary);
 background: rgb(var(--background));
 color: rgb(var(--text-color));
-font: var(--text-font-style) var(--text-font-weight) var(--text-base) / 1.6 var(--text-font-family);
+font: var(--text-font-style) var(--text-font-weight) var(--text-base) / 1.6 'Barlow', sans-serif;
 letter-spacing: var(--text-letter-spacing);
 margin: 0;
 position: relative;
@@ -118,7 +118,7 @@ font-weight: bolder;
 }
 
 code, kbd, samp, pre {
-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+font-family: 'Barlow', sans-serif;
 font-size: 1em;
 }
 
@@ -129,7 +129,7 @@ border-collapse: collapse;
 }
 
 button, input, optgroup, select, textarea {
-font-family: inherit;
+font-family: Barlow, sans-serif;
 font-size: 100%;
 font-weight: inherit;
 font-style: inherit;
@@ -7040,10 +7040,11 @@ grid-area: 1 / -1;
 }
 
 .multiple-images-with-text__image-list {
-width: 100%;
+/* width: 100%; */
 grid-template: var(--multiple-images-with-text-images-grid-template, none);
 align-items: var(--multiple-images-with-text-images-alignment, center);
-display: grid;
+display: block;
+padding-right: 50px;
 }
 
 .multiple-images-with-text__image-list > img {
@@ -9992,7 +9993,9 @@ font-weight: 700;
 padding-top: 40px;
 }
 
-.section-blends .rich-text__wrapper p {width: 72%;margin: auto;}
+.section-blends .rich-text__wrapper p {width: 72%; margin: auto;}
+
+.section-blends .rich-text__wrapper p.ant-keeping-headeing {width: 52%; margin: auto;}
 
 .images-scrolling-desktop {
 padding: 50px 30px 0;
@@ -10094,9 +10097,9 @@ text-align: left;
 .multiple-images-with-text .prose.is-selected .h1 {
 font-size: 48px;
 font-weight: 700;
-max-width: 70%;
+max-width: 100%;
 width: 100%;
-}
+} 
 
 .multiple-images-with-text .prose.is-selected .button {
 border-radius: 50px;
@@ -10205,7 +10208,7 @@ transform: rotate(var(--image-rotation, 0deg));
 .beginner-section .main-flex-item .text-3xl {
 font-size: 45px;
 font-weight: 800;
-text-transform: uppercase;
+/* text-transform: uppercase; */
 
 }
 
@@ -11961,7 +11964,7 @@ font-size: 20px;
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 15px;
-    font-family: sans-serif;
+    font-family: Barlow, sans-serif;
 }
 
 .product-section-two .product {
@@ -12302,33 +12305,61 @@ h3.font-medium.text-gray-900 {
     color: #fff;
 }
 
+header .header-wrapper-cst {
+    padding: 2.125rem;
+}
+
+.header-heading {
+    margin-bottom: 20px;
+}
+.sub-inner-menu li {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 16px;
+}
+ 
+.header-submenu-images .tracking-wide {
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: 0;
+    position: absolute;
+    top: 60%;
+}
+
 .sub-menu {
     z-index: 999;
-    background-color: #fff;
-    border-top: 1px solid #e5e7eb;
+    background-color: rgb(240 240 240);
+    border-top: 1px solid rgb(26 26 26 / .12);
     justify-content: space-between;
     gap: 2.5rem;
     width: 100vw;
-    margin-left: calc(50% + 6vw);
-    padding: 2.5rem 13rem;
+    /* margin-left: calc(50% + 6vw); */
+    padding: 40px 80px;
     display: flex;
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 4px;
     right: 0;
-    transform: translateX(-50%);
+    transform: translateX(-38%);
     box-shadow: 0 20px 25px -5px #0000001a, 0 10px 10px -5px #0000000a;
-    top: 75px;
+    top: 98px;
+}
+
+.sub-menu h4 {
+    font-size: 24px;
+    color: #1A1A1A;
+    letter-spacing: -0.48px;
 }
 body.home-page .main-header .sub-menu ul li a, body.home-page .main-header .sub-menu p {
     color: #000;
 }
 
 .learn-menu {
-    margin: calc(40% + 0vw);
+    margin: 0px;
+    margin-left: -97px;
 }
 .info-menu {
-    margin-left: calc(-43% + 0vw);
+    margin-left: -23%;
     transform: translateX(-59%);
 }
 

@@ -7,7 +7,7 @@ export default function FeaturedCollection() {
   const { addToCart } = useCart();
   const products = [
     {
-      id: 1,
+      id: 45970358665497,
       title: "Mini Ruby Ants (C. discolor)",
       price: 51.99,
       displayPrice: "From $51.99",
@@ -16,7 +16,7 @@ export default function FeaturedCollection() {
       image2: "/images/1.1.png",
     },
     {
-      id: 2,
+      id: 45970336088345,
       title: "Golden Tail Ants",
       price: 92.99,
       displayPrice: "From $92.99",
@@ -25,7 +25,7 @@ export default function FeaturedCollection() {
       image2: "/images/2.2.jpg",
     },
     {
-      id: 3,
+      id: 45970388189465,
       title: "Sunrise Amber Ants",
       price: 82.99,
       displayPrice: "From $82.99",
@@ -58,7 +58,7 @@ export default function FeaturedCollection() {
         {/* PRODUCTS */}
         <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4">
           {products.map((product, index) => (
-            <div key={index} className="min-w-[260px] bg-white">
+            <div key={index} className="min-w-[360px] bg-white">
             
                 <a
                   href={buildShopifyUrl(product.link)}

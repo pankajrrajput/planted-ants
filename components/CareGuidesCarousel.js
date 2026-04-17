@@ -51,7 +51,7 @@ export default function CareGuidesCarousel() {
 
           <div className="min-h-[220px] transition-all duration-500">
             {slide.badge && (
-              <p className="font-semibold text-sm opacity-70 mb-2">
+              <p className="font-semibold text-sm mb-2">
                 {slide.badge}
               </p>
             )}
