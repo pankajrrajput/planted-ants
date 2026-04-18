@@ -75,6 +75,7 @@ export default function Header() {
               </button>
 
               {openMenu === "shop" && (
+
                 <div className="absolute sub-menu left-0 top-full w-screen bg-white shadow-xl border-t p-10 flex justify-between gap-10 animate-fadeIn shop-menu">
 
                   <div className="flex gap-20">
@@ -116,6 +117,8 @@ export default function Header() {
                   </div>
 
                 </div>
+             
+
               )}
             </li>
 
