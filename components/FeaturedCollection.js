@@ -40,7 +40,7 @@ export default function FeaturedCollection() {
       <div className="section-stack">
         
         {/* HEADER */}
-        <div className="flex items-end justify-between mb-6">
+        <div className="flex items-end justify-between mb-6 flex-item-slide">
           <div className="prose">
             <h2 className="h2">Ants For Sale</h2>
             <p>Check out all the queen ants we have available!</p>
@@ -56,9 +56,9 @@ export default function FeaturedCollection() {
         </div>
 
         {/* PRODUCTS */}
-        <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4">
+        <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4 sale-product">
           {products.map((product, index) => (
-            <div key={index} className="min-w-[360px] bg-white">
+            <div key={index} className="min-w-[360px] bg-white about-porduct">
             
                 <a
                   href={buildShopifyUrl(product.link)}
@@ -95,7 +95,7 @@ export default function FeaturedCollection() {
                           image: product.image1
                         });
                       }}
-                      className="mt-2 w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors text-sm"
+                      className="mt-2 w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors text-sm add-cart"
                     >
                       Add to Cart
                     </button>

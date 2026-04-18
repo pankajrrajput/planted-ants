@@ -86,7 +86,7 @@ function ProductCard({ id, title, price, displayPrice, image, image2, link, addT
           price: price,
           image: image
         })}
-        className="w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors text-sm"
+        className="w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors text-sm quick-add"
       >
         + Quick add
       </button>
