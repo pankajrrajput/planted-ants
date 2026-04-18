@@ -12350,6 +12350,9 @@ header .header-wrapper-cst {
     color: #1A1A1A;
     letter-spacing: -0.48px;
 }
+body.home-page .main-header .sub-menu ul li a, body.home-page .main-header .sub-menu p {
+    color: #000;
+}
 
 .learn-menu {
     margin: 0px;
