@@ -36,15 +36,15 @@ export default function Header() {
       {/* <div className="grid grid-cols-[1fr_auto_1fr] items-center px-10 py-4 max-w-[1400px] mx-auto"> */}
 
         {/* MOBILE TOGGLE */}
-        <button
-          className="md:hidden text-2xl"
+        <button 
+          className="md:hidden text-2xl mobile-togle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           ☰
         </button>
 
         {/* LOGO */}
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-start logo">
           <a href="/" className="block">
             <img
               src="/images/logo.webp"
@@ -57,7 +57,7 @@ export default function Header() {
         </div>
 
         {/* NAV */}
-        <nav className="hidden md:flex justify-center items-center">
+        <nav className="hidden md:flex justify-center items-center desktop-menu">
           <ul className="flex items-center gap-8 font-semibold text-gray-900 uppercase tracking-wide">
 
             {/* SHOP */}
@@ -292,20 +292,20 @@ export default function Header() {
     </header>
     
     {mobileMenuOpen && (
-      <div className="fixed inset-0 z-[2000] md:hidden bg-black/20">
+      <div className="fixed inset-0 z-[2000] md:hidden bg-black/20 mobile-menu">
         
         {/* CLOSE BUTTON */}
         <button
           onClick={() => setMobileMenuOpen(false)}
           className="absolute top-24 left-1/2 -translate-x-1/2 z-10 
                     w-14 h-14 rounded-full bg-white shadow-md
-                    flex items-center justify-center text-3xl"
+                    flex items-center justify-center text-3xl mobile-arrow"
         >
           ×
         </button>
 
         {/* MENU PANEL */}
-        <div className="absolute top-40 left-0 right-0 bg-white rounded-t-2xl min-h-[70vh] px-8 py-10">
+        <div className="absolute top-40 left-0 right-0 bg-white rounded-t-2xl min-h-[70vh] px-8 py-10 sub-menu-mobile">
           <ul className="space-y-8 font-bold text-3xl uppercase text-black">
 
             {/* SHOP */}
@@ -323,7 +323,7 @@ export default function Header() {
                 onClick={() =>
                   setOpenMenu(openMenu === "shop" ? null : "shop")
                 }
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center arro-right"
               > 
                 ›
               </button>
@@ -385,7 +385,7 @@ export default function Header() {
                 onClick={() =>
                   setOpenMenu(openMenu === "learn" ? null : "learn")
                 }
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center arrow-right"
               >
                 ›
               </button>

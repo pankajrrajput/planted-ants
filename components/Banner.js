@@ -19,7 +19,7 @@ export default function Banner() {
         <div id="block-slide-1" className="slideshow__slide is-selected">
 
           <div
-            className="content-over-media content-over-media--auto"
+            className="content-over-media content-over-media--auto home-banner"
             style={{
               "--content-over-media-content-max-width": "520px",
               "--content-over-media-overlay": "0 0 0 / 0.3",
