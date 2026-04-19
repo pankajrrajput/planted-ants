@@ -67,7 +67,15 @@ export default function PressCarousel() {
             ‹
           </button>
 
-          {/* Dots (fixed only) */}
+         
+          <button onClick={next} className="circle-button">
+            ›
+          </button>
+
+        </div>
+
+
+         {/* Dots (fixed only) */}
           <div className="flex gap-2 items-center justify-center">
             {testimonials.map((_, i) => (
               <span
@@ -75,8 +83,8 @@ export default function PressCarousel() {
                 onClick={() => setIndex(i)}
                 style={{
                   display: "inline-block",
-                  width: i === index ? "18px" : "8px",
-                  height: "8px",
+                  width: i === index ? "6px" : "6px",
+                  height: "6px",
                   borderRadius: "999px",
                   backgroundColor: i === index ? "#000" : "#ccc",
                   cursor: "pointer",
@@ -87,11 +95,6 @@ export default function PressCarousel() {
           </div>
 
           {/* Next */}
-          <button onClick={next} className="circle-button">
-            ›
-          </button>
-
-        </div>
 
       </div>
     </section>
