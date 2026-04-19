@@ -136,7 +136,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
               <span className="font-semibold">Total:</span>
               <span className="font-bold text-xl">${calculateTotal()}</span>
             </div>
-            <div class="btn-wrap">
+            <div className="btn-wrap">
             <button 
               onClick={handleCheckout}
               className="w-full py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors font-medium first-btn"

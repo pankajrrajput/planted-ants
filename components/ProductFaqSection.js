@@ -93,7 +93,7 @@ export default function ProductFaqSection() {
                   <div className="accordion__toggle bold">
                     <span>{item.question}</span>
                     <span className="circle-chevron">
-                      <svg role="presentation" focusable="false" width="8" height="6" class="icon icon-chevron-bottom-small" viewBox="0 0 8 6">
+                      <svg role="presentation" focusable="false" width="8" height="6" className="icon icon-chevron-bottom-small" viewBox="0 0 8 6">
         <path d="m1 1.5 3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.5"></path>
       </svg>
                     </span>
