@@ -57,7 +57,7 @@ export default function ProductPage() {
         <div className="product-left-side">
 
           {/* MAIN IMAGE */}
-          <div class="product-wrap">
+          <div className="product-wrap">
           <div className="product-gallery__main">
             <img
               src={activeImage}

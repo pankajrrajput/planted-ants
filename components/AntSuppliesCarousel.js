@@ -15,7 +15,7 @@ export default function AntSuppliesCarousel() {
             <h2 className="h2">Ant Supplies For Sale</h2>
             <p>Need some ant supplies?</p>
           </div>
-          <a href="/collections/ants-for-sale" class="flex items-center gap-2 group for-sale"><span class="group-hover:underline tag">View all</span><div class="view-btn"><span>›</span></div></a>
+          <a href="/collections/ants-for-sale" className="flex items-center gap-2 group for-sale"><span className="group-hover:underline tag">View all</span><div className="view-btn"><span>›</span></div></a>
         
         </header>
 
@@ -77,8 +77,8 @@ function ProductCard({ id, title, price, displayPrice, image, image2, link, addT
       </a>
 
       <div className="product-card__info">
-        <div class="title">{title}</div>
-        <div class="description">{displayPrice}</div>
+        <div className="title">{title}</div>
+        <div className="description">{displayPrice}</div>
       </div>
 
       <button

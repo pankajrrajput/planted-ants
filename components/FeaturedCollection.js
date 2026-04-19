@@ -51,7 +51,7 @@ export default function FeaturedCollection() {
             className="flex items-center gap-2 group for-sale"
           >
             <span className="group-hover:underline tag ">View all</span>
-            <div class="view-btn">
+            <div className="view-btn">
             <span>›</span>
             </div>
           </a>
