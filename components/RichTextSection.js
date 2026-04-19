@@ -1,6 +1,6 @@
 export default function RichTextSection() {
   return (
-    <div className="section section-blends section-full">
+    <div className="section section-blends section-full ant-keep-section">
       <div className="rich-text justify-center">
 
         <div className="rich-text__wrapper">
