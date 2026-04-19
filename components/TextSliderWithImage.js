@@ -53,8 +53,8 @@ export default function TextSliderWithImage() {
 
         {/* CONTROLS */}
         <div className="controls">
-          <button onClick={prevSlide}>←</button>
-          <button onClick={nextSlide}>→</button>
+          <button  onClick={prevSlide}></button>
+          <button onClick={nextSlide} ></button>
         </div>
       </div>
 

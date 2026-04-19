@@ -36,7 +36,7 @@ export default function FeaturedCollection() {
   ];
 
   return (
-    <div className="section section-blends section-full">
+    <div className="section section-blends section-full ant-sale">
       <div className="section-stack">
         
         {/* HEADER */}
@@ -48,10 +48,12 @@ export default function FeaturedCollection() {
 
           <a
             href={buildShopifyUrl("/collections/ants-for-sale")}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group for-sale"
           >
-            <span className="group-hover:underline">View all</span>
+            <span className="group-hover:underline tag ">View all</span>
+            <div class="view-btn">
             <span>›</span>
+            </div>
           </a>
         </div>
 

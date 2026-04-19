@@ -15,7 +15,7 @@ const timelineData = [
     year: "2017",
     title: "2017: The start of a journey.",
     subtitle: "Beginnings of the brand.",
-    text: "It all began with Kushal's deep intrigue for these cute insects. Entranced by their cooperative societies and behaviors, he yearned to unlock the secrets of these tiny architects. </br> Armed with an unwavering commitment to excellence, Kushal set out on a mission to provide the finest ant colonies and ant farms and founded Planted ANTS.",
+    text: "It all began with Kushal's deep intrigue for these cute insects. Entranced by their cooperative societies and behaviors, he yearned to unlock the secrets of these tiny architects. sArmed with an unwavering commitment to excellence, Kushal set out on a mission to provide the finest ant colonies and ant farms and founded Planted ANTS.",
     image:
       "/images/1st-slider.webp",
   },
@@ -23,7 +23,7 @@ const timelineData = [
     year: "2018",
     title: "2018: Reptile Conventions",
     subtitle: "Our First Convention.",
-    text: "With a leap of faith and a passion for both reptiles and the mesmerizing world of ants, we eagerly embarked on a novel adventure – selling ants at reptile conventions! </br> The reptile conventions not only provided a platform to show our ants but also became an avenue to promote responsible antkeeping and conservation. Through discussions and educational materials, we sought to foster a deeper appreciation for these tiny yet essential creatures and their vital role in our ecosystem.",
+    text: "With a leap of faith and a passion for both reptiles and the mesmerizing world of ants, we eagerly embarked on a novel adventure – selling ants at reptile conventions! The reptile conventions not only provided a platform to show our ants but also became an avenue to promote responsible antkeeping and conservation. Through discussions and educational materials, we sought to foster a deeper appreciation for these tiny yet essential creatures and their vital role in our ecosystem.",
     image:
       "/images/2nd-slide.webp",
   },
@@ -31,7 +31,7 @@ const timelineData = [
     year: "2020",
     title: "2020: The Pandemic",
     subtitle: "COVID hit harder than a truck.",
-    text: "The onset of the COVID-19 pandemic dealt a crushing blow to vending at conventions. The absence of in-person gatherings meant losing a vital platform for engagement with potential customers and fellow enthusiasts. </br> Amidst the disappointment and hardships, we had to adapt to survive. This is where our online shop plantedants.com was born.",
+    text: "The onset of the COVID-19 pandemic dealt a crushing blow to vending at conventions. The absence of in-person gatherings meant losing a vital platform for engagement with potential customers and fellow enthusiasts.  Amidst the disappointment and hardships, we had to adapt to survive. This is where our online shop plantedants.com was born.",
     image:
       "/images/3rd-slide.webp",
   },
@@ -39,7 +39,7 @@ const timelineData = [
     year: "2023",
     title: "2023: Where we are now",
     subtitle: "From Humble Beginnings to Today: The Full Story",
-    text: "As of 2023, Planted ANTS has journeyed far from its humble beginnings and evolved into a respected company in the world of antkeeping. </br> As we look ahead, we actively engage in promoting ethical practices and educating our customers about the vital role ants play in our ecosystem.",
+    text: "As of 2023, Planted ANTS has journeyed far from its humble beginnings and evolved into a respected company in the world of antkeeping. As we look ahead, we actively engage in promoting ethical practices and educating our customers about the vital role ants play in our ecosystem.",
     image:
       "/images/4th-slide.webp",
   },
@@ -97,14 +97,14 @@ export default function TimelineSection() {
                 onClick={prev}
                 className="px-4 py-2 border rounded hover:bg-black hover:text-white icon"
               >
-                ‹
+             
               </button>
 
               <button
                 onClick={next}
                 className="px-4 py-2 border rounded hover:bg-black hover:text-white icon"
               >
-                ›
+              
               </button>
             </div>
 

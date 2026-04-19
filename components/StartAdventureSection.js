@@ -31,7 +31,7 @@ export default function StartAdventureSection() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col gap-4 top-head-inner">
         <div className="content">
           <h2 className="text-3xl font-bold">
-            Start your adventure with a queen ant.
+            Start your adventure with a queen <span>ant</span>
           </h2>
           <p className="mt-2">
             Now that you know about us, begin your adventure with an ant queen
