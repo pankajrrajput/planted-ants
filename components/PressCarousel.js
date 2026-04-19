@@ -34,9 +34,8 @@ export default function PressCarousel() {
     <section className="section section-full testimonail-section">
       <div className="press">
 
-        {/* Slider Window */}
+        {/* Slider */}
         <div className="overflow-hidden relative w-full">
-
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
@@ -60,25 +59,34 @@ export default function PressCarousel() {
           </div>
         </div>
 
-        {/* Controls */}
+        {/* Controls (UNCHANGED LAYOUT) */}
         <div className="press__controls flex items-center justify-center gap-4 mt-6">
 
+          {/* Prev */}
           <button onClick={prev} className="circle-button">
             ‹
           </button>
 
-          <div className="flex gap-2">
+          {/* Dots (fixed only) */}
+          <div className="flex gap-2 items-center justify-center">
             {testimonials.map((_, i) => (
-              <button
+              <span
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-2 h-2 rounded-full ${
-                  i === index ? "bg-black" : "bg-gray-300"
-                }`}
+                style={{
+                  display: "inline-block",
+                  width: i === index ? "18px" : "8px",
+                  height: "8px",
+                  borderRadius: "999px",
+                  backgroundColor: i === index ? "#000" : "#ccc",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
               />
             ))}
           </div>
 
+          {/* Next */}
           <button onClick={next} className="circle-button">
             ›
           </button>

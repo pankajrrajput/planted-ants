@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow } from 'next/font/google';
 import "./globals.css";
 import AnnouncementBar from '../components/AnnouncementBar';
 import Header from '../components/Header';
@@ -10,14 +11,20 @@ import { CartProvider } from '../contexts/CartContext';
 import ClientLayoutWrapper from "../components/ClientLayoutWrapper";
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'], // choose what you need
+  variable: '--font-barlow', // optional (for CSS variables)
 });
 
 export const metadata: Metadata = {
@@ -34,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${barlow.variable} h-full antialiased`}
     >
       <body>
         <CartProvider>

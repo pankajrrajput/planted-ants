@@ -3,13 +3,16 @@
 import { useState, useEffect } from "react";
 import { useCart } from "../contexts/CartContext";
 
+
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { cartItems, isCartOpen, updateQuantity, removeItem, getTotalItems, closeCart, openCart } = useCart();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -282,8 +285,11 @@ export default function Header() {
               />
               <path d="M6 9H18" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            {getTotalItems() > 0 && (
-              <span className="absolute -top-2 -right-3 bg-black text-white text-xs px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+           
+             {mounted && (
+              <span className={`absolute -top-2 -right-3 bg-black text-white text-xs px-1.5 py-0.5 rounded-full min-w-[20px] text-center ${
+                getTotalItems() === 0 ? 'hidden' : ''
+              }`}>
                 {getTotalItems()}
               </span>
             )}

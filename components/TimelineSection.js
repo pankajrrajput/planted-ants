@@ -70,17 +70,18 @@ export default function TimelineSection() {
 
           {/* CONTENT */}
           <div className="space-y-4 transition-all duration-500 right-inner">
-            <p className="text-sm font-bold text-gray-500">
+            {/* <p className="text-sm font-bold text-gray-500">
               {timelineData[index].year}
-            </p>
+            </p> */}
+            <h3 className="text-xl text-gray-700">
+              {timelineData[index].title}
+            </h3>
 
             <h2 className="text-3xl font-bold">
               {timelineData[index].subtitle}
             </h2>
 
-            <h3 className="text-xl text-gray-700">
-              {timelineData[index].title}
-            </h3>
+            
 
             <p className="text-gray-600 leading-relaxed">
               {timelineData[index].text}
