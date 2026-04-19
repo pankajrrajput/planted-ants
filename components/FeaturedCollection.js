@@ -66,7 +66,7 @@ export default function FeaturedCollection() {
                   href={buildShopifyUrl(product.link)}
                   className="block group"
                 >
-                  <div className="relative w-full h-[260px] overflow-hidden">
+                  <div className="relative w-full h-[353px] overflow-hidden">
                     
                     {/* Main Image */}
                     <img
@@ -83,7 +83,7 @@ export default function FeaturedCollection() {
                     />
                   </div>
 
-                  <div className="mt-3">
+                  <div className="product-about">
                     <p className="font-bold">{product.title}</p>
                     <p className="text-gray-600">{product.displayPrice}</p>
                     <button

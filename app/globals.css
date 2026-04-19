@@ -10001,11 +10001,14 @@ right: 5px;
 position: static;
 }
 
-.section-stack .sale-product .about-porduct {
-min-width: auto !important;
+.section-stack .sale-product .about-porduct .product-about {
+    padding: 24px 32px 32px;
 }
+
+
+
 .slideshow.slider-banner .prose .h0 {
-font-size: 64px;
+font-size: 80px;
 font-weight: 700;
 }
 
@@ -10030,19 +10033,18 @@ font-weight: 700;
 
 
 .images-scrolling-desktop {
-    padding: 50px 0;
-    display: flex;
-    max-width: 1350px;
+    max-width: 1600px;
     margin: auto;
+    padding: 90px 42px;
+    display: flex;
 }
-
 .images-scrolling-desktop .h1 {
 font-size: 60px;
 font-weight: 700;
 }
 .images-scrolling-desktop .images-scrolling-desktop__media-wrapper {
-width: 80%;
-
+    width: 80%;
+    height: 500px;
 }
 
 .images-scrolling-desktop .images-scrolling-desktop__media-wrapper .rounded-sm {
@@ -10160,18 +10162,16 @@ color: #fff;
 }
 
 .impact-text.impact-text--center .impact-text__text .impact-text-inner.text-gradient {
-background-image: linear-gradient(180deg, rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0) 100%);
-color: #0000 !important;
-font-size: 192px;
-font-weight: 700;
+    background-image: linear-gradient(#1a1a1a33, #1a1a1a00 100%);
+    font-size: calc(min(15vw, var(--container-max-width) * 0.15) / 1 * 1);
+    font-weight: 700;
+    color: #0000 !important;
 }
-
 
 .impact-text.impact-text--center .impact-text__content .prose .h4 {
-font-size: 30px;
-font-weight: 700;
+    font-size: 32px !IMPORTANT;
+    font-weight: 700;
 }
-
 .section-stack {
 padding: 50px 50px 0;
 }
@@ -10184,8 +10184,8 @@ display: flex;
 border-radius: .375rem .375rem  0 0!important;
 }
 .section-stack .prose .h2 {
-font-size: 2.5rem;
-font-weight: 700;
+    font-size: 48px;
+    font-weight: 700;
 }
 
 .section-stack .carousel {
@@ -10289,7 +10289,7 @@ align-items: center;
 
 .animation-section button .icon-plus {width: 12px;height: 12px;}
 .testimonail-section .press {
-max-width: 1200px;
+max-width: 1100px;
 margin: auto;
 width: 100%;
 }
@@ -10299,13 +10299,14 @@ z-index: 100;
 }
 
 .testimonail-section .quot-section blockquote {
-font-size: 35px;
+font-size: 36px;
 font-weight: 700;
 }
 
 .testimonail-section .text-subdued {
-padding-top: 30px;
-color: #1a1a1ab3;
+    color: #1a1a1ab3;
+    padding-top: 30px;
+    font-weight: 500;
 }
 
 
@@ -10315,8 +10316,10 @@ position: relative;
 }
 
 .beginner-section .main-flex-item {
-align-items: center;
-gap: 100px;
+    align-items: center;
+    gap: 100px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .beginner-section .main-flex-item img {
@@ -10325,7 +10328,7 @@ transform: rotate(var(--image-rotation, 0deg));
 }
 
 .beginner-section .main-flex-item .text-3xl {
-font-size: 45px;
+font-size: 60px;
 font-weight: 800;
 /* text-transform: uppercase; */
 
@@ -10337,10 +10340,11 @@ padding: 20px 0;
 }
 
 .beginner-section .main-flex-item a {
-color: #fff;
-border-radius: 50px;
+    color: #fff;
+    border-radius: 50px;
+    padding: 17px 40px;
+    font-weight: 700;
 }
-
 
 
 .beginner-section .arrow-carousel {
@@ -10558,14 +10562,18 @@ color: #fff;
     width: 100%;
     max-width: 1600px;
     margin: auto;
-    padding: 50px;
+    padding: 80px;
+    gap: 75px;
 }
 
+.contact-section {
+    padding-top: 20px;
+}
 .faq-section {
-    padding: 0 48px !important;
+    padding: 48px !important;
 }
 .faq-section .inner-container .text-3xl {
-font-size: 35px;
+font-size: 48px;
 font-weight: 700;
 margin-bottom: 30px;
 }
@@ -10613,10 +10621,10 @@ border-radius: 20px;
 }
 
 .faq-section .inner-container .faq_right .text-left {
-border-bottom: 1px solid #1a1a1a1f;
-padding: 14px 0;
-font-weight: 700;
-gap: 10px;
+    border-bottom: 1px solid #1a1a1a1f;
+    gap: 10px;
+    padding: 22px 0;
+    font-weight: 700;
 }
 
 .faq-section .inner-container .faq_right .faq-content {
@@ -10644,7 +10652,7 @@ border: 0;
 .contact-section .contact-inner .font-semibold {font-weight: 700;}
 
 .contact-section .contact-inner .text-3xl {
-font-size: 45px;
+font-size: 48px;
 font-weight: 700;
 padding-top: 30px;
 }
@@ -10673,12 +10681,13 @@ outline: none;
 }
 
 .contact-section .contact-inner .form-content button {
-width: max-content;
-background: #000;
-color: #fff;
-border-radius: 50px;
-padding: 17px 40px;
-margin-top: 20px;
+    color: #fff;
+    background: #000;
+    border-radius: 50px;
+    width: max-content;
+    margin-top: 20px;
+    padding: 17px 40px;
+    font-weight: 700;
 }
 
 
@@ -10881,7 +10890,7 @@ max-width: 500px;
 }
 
 .text-with-image-section .container .slide .contentContainer h2 {
-font-size: 48px;
+font-size: 60px;
 font-weight: 700;
 padding-bottom: 20px;
 }
@@ -10926,7 +10935,7 @@ margin: auto;
 
 .section.text-and-image .container .content {
     max-width: 50%;
-    padding: 75px;
+    padding: 80px;
 }
 
 .section.text-and-image .container .media img {
@@ -10935,7 +10944,7 @@ height: 100%;
 object-fit: cover;
 }
 .section.text-and-image .container .content h2 {
-font-size: 40px;
+font-size: 48px;
 font-weight: 700;
 padding-bottom: 30px;
 }
@@ -10975,7 +10984,7 @@ max-width: 56%;
 }
 
 .left-image-right-content .container .content h2 {
-font-size: 48px;
+font-size: 48px !important;
 font-weight: 700;
 margin-bottom: 30px;
 }
@@ -11046,9 +11055,9 @@ flex-direction: column;
 }
 
 .impact-section .impact-text .impact-text__text.heading {
-font-size: 150px;
-font-weight: 700;
-margin: 0;
+    margin: 0;
+    font-weight: 700;
+    font-size: calc(min(15vw, var(--container-max-width) * .15) / 1 * 1);
 }
 
 .impact-section .impact-text .impact-text__content a {
@@ -11121,10 +11130,9 @@ width: 3.5rem;
 height: 0.125rem;
 }
 .content-section-with-image .left-content h2 {
-font-size: 48px;
-font-weight: 700;
-padding: 30px 0;
-
+    padding: 30px 0;
+    font-size: 60px;
+    font-weight: 700;
 }
 
 .media-section {
@@ -11419,7 +11427,7 @@ padding: 0;
 
 
 .product-section .top-head-inner h2 {
-font-size: 40px;
+font-size: 48px;
 font-weight: 700;
 }
 
@@ -12624,11 +12632,7 @@ bottom: 30%;
 .faq-section .inner-container a {
 margin-top: 30px;
 }
-.beginner-section .main-flex-item {
 
-flex-direction: column;
-gap:40px;
-}
 
 .contact-section .contact-inner {
 flex-direction: column;
